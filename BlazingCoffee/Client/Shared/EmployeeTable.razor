@@ -1,0 +1,34 @@
+﻿@if (Employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@nameof(Employee.Id)</th>
+                <th>@nameof(Employee.FullName)</th>
+                <th>@nameof(Employee.Address)</th>
+                <th>@nameof(Employee.Budget)</th>
+                <th>@nameof(Employee.Phone)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Employees)
+            {
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.FullName</td>
+                    <td>@employee.Address</td>
+                    <td>@employee.Budget</td>
+                    <td>@employee.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter] public Employee[] Employees { get; set; }
+}

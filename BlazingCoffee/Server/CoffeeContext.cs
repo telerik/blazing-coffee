@@ -12,6 +12,6 @@ namespace BlazingCoffee.Server
         public CoffeeContext(DbContextOptions<CoffeeContext> options) : base(options)
         {
         }
-        DbSet<Employee> Employees { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }

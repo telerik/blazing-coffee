@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30028.174
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCoffee.Server", "BlazingCoffee\Server\BlazingCoffee.Server.csproj", "{2E56965E-5769-466A-9E51-4F25F7C00684}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCoffee.Server", "BlazingCoffee\Server\BlazingCoffee.Server.csproj", "{2E56965E-5769-466A-9E51-4F25F7C00684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCoffee.Client", "BlazingCoffee\Client\BlazingCoffee.Client.csproj", "{08F45D46-E3F7-4817-AA20-B866768E6AED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCoffee.Client", "BlazingCoffee\Client\BlazingCoffee.Client.csproj", "{08F45D46-E3F7-4817-AA20-B866768E6AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCoffee.Shared", "BlazingCoffee\Shared\BlazingCoffee.Shared.csproj", "{7BD11E7E-010D-4025-BA35-EB46B2D6FA83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCoffee.Shared", "BlazingCoffee\Shared\BlazingCoffee.Shared.csproj", "{7BD11E7E-010D-4025-BA35-EB46B2D6FA83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
