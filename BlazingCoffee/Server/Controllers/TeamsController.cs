@@ -12,48 +12,49 @@ namespace BlazingCoffee.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeesController : ControllerBase
+    public class TeamsController : ControllerBase
     {
         private readonly CoffeeContext _context;
 
-        public EmployeesController(CoffeeContext context)
+        public TeamsController(CoffeeContext context)
         {
             _context = context;
         }
 
-        // GET: api/Employees
+        // GET: api/Teams
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
+        public async Task<ActionResult<IEnumerable<Team>>> GetTeams()
         {
-            return await _context.Employees.Include(e => e.Team).ToListAsync();
+            var data = await _context.Teams.ToListAsync();
+            return data;
         }
 
-        // GET: api/Employees/5
+        // GET: api/Teams/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Employee>> GetEmployee(int id)
+        public async Task<ActionResult<Team>> GetTeam(int id)
         {
-            var employee = await _context.Employees.FindAsync(id);
+            var team = await _context.Teams.FindAsync(id);
 
-            if (employee == null)
+            if (team == null)
             {
                 return NotFound();
             }
 
-            return employee;
+            return team;
         }
 
-        // PUT: api/Employees/5
+        // PUT: api/Teams/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployee(int id, Employee employee)
+        public async Task<IActionResult> PutTeam(int id, Team team)
         {
-            if (id != employee.Id)
+            if (id != team.TeamId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(employee).State = EntityState.Modified;
+            _context.Entry(team).State = EntityState.Modified;
 
             try
             {
@@ -61,7 +62,7 @@ namespace BlazingCoffee.Server.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmployeeExists(id))
+                if (!TeamExists(id))
                 {
                     return NotFound();
                 }
@@ -74,37 +75,37 @@ namespace BlazingCoffee.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/Employees
+        // POST: api/Teams
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
+        public async Task<ActionResult<Team>> PostTeam(Team team)
         {
-            _context.Employees.Add(employee);
+            _context.Teams.Add(team);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEmployee", new { id = employee.Id }, employee);
+            return CreatedAtAction("GetTeam", new { id = team.TeamId }, team);
         }
 
-        // DELETE: api/Employees/5
+        // DELETE: api/Teams/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Employee>> DeleteEmployee(int id)
+        public async Task<ActionResult<Team>> DeleteTeam(int id)
         {
-            var employee = await _context.Employees.FindAsync(id);
-            if (employee == null)
+            var team = await _context.Teams.FindAsync(id);
+            if (team == null)
             {
                 return NotFound();
             }
 
-            _context.Employees.Remove(employee);
+            _context.Teams.Remove(team);
             await _context.SaveChangesAsync();
 
-            return employee;
+            return team;
         }
 
-        private bool EmployeeExists(int id)
+        private bool TeamExists(int id)
         {
-            return _context.Employees.Any(e => e.Id == id);
+            return _context.Teams.Any(e => e.TeamId == id);
         }
     }
 }

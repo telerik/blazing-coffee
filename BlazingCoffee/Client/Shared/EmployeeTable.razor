@@ -12,6 +12,7 @@ else
                 <th>@nameof(Employee.Address)</th>
                 <th>@nameof(Employee.Budget)</th>
                 <th>@nameof(Employee.Phone)</th>
+                <th>@nameof(Employee.Team)</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@ else
                     <td>@employee.Address</td>
                     <td>@employee.Budget</td>
                     <td>@employee.Phone</td>
+                    <td style="color: @employee.Team.TeamColor">@employee.Team.TeamName</td>
                 </tr>
             }
         </tbody>

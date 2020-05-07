@@ -13,5 +13,10 @@ namespace BlazingCoffee.Server
         {
         }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Locale> Locales { get; set; }
+
     }
 }

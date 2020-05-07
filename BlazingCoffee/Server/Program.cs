@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlazingCoffee.Server.Data;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -37,6 +38,7 @@ namespace BlazingCoffee.Server
                 try
                 {
                     var context = services.GetRequiredService<CoffeeContext>();
+                    context.Database.Migrate();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

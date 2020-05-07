@@ -1,9 +1,13 @@
-﻿namespace BlazingCoffee.Shared.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BlazingCoffee.Shared.Models
 {
     public class Employee
         {
+            [Key]
             public int Id { get; set; }
             public int TeamId { get; set; }
+            public Team Team { get; set; }
             public string FullName { get; set; }
             public string JobTitle { get; set; }
             public string Country { get; set; }
