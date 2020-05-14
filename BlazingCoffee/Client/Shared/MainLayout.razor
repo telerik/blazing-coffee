@@ -1,38 +1,38 @@
 ﻿@inherits LayoutComponentBase
 
-    <header class="header">
-        <div class="nav-container">
-            <div class="menu-button">
-                <TelerikButton Icon="@IconName.Menu" OnClick="@(() => Expanded = !Expanded)" />
-            </div>
-
-            <div class="title">
-                <h1>Title</h1>
-                <span className="vl"></span>
-                <h2>Page Title</h2>
-            </div>
-            <div class="settings">
-                <span>Language</span>
-            </div>
+<header class="header">
+    <div class="nav-container">
+        <div class="menu-button">
+            <TelerikButton Icon="@IconName.Menu" OnClick="@(() => Expanded = !Expanded)" />
         </div>
-    </header>
-    <TelerikRootComponent>
-        <TelerikDrawer @bind-Expanded="@Expanded" Data="Data" MiniMode="true" Mode="DrawerMode.Push">
-            <Content>
-                @Body
-            </Content>
-        </TelerikDrawer>
-    </TelerikRootComponent>
 
-    @code {
-        public bool Expanded { get; set; } = false;
-        public IEnumerable<object> Data { get; set; } =
-            new List<object>
-            {
+        <div class="title">
+            <h1>Title</h1>
+            <span className="vl"></span>
+            <h2>Page Title</h2>
+        </div>
+        <div class="settings">
+            <span>Language</span>
+        </div>
+    </div>
+</header>
+<TelerikRootComponent>
+    <TelerikDrawer @bind-Expanded="@Expanded" Data="Data" MiniMode="true" Mode="DrawerMode.Push">
+        <Content>
+            @Body
+        </Content>
+    </TelerikDrawer>
+</TelerikRootComponent>
+
+@code {
+    public bool Expanded { get; set; } = false;
+    public IEnumerable<object> Data { get; set; } =
+        new List<object>
+        {
             new { Text = "Item1", Icon = IconName.AlignBottom, Url="/"},
             new { Text = "Human Capital", Icon = IconName.TellAFriend, Url="/fetchdata"},
             //new { IsSeparator = true},
             //new { Text = "Item4", Icon = IconName.All},
             //new { Text = "Item5", Icon = IconName.CancelCircle}
         };
-    }
+}

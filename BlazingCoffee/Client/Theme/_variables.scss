@@ -26,7 +26,7 @@ $series-f: #7378d9;
 $background-color: scale-color($accent, $saturation: -55%, $lightness: 65%);
 
 
-$isDarkTheme: true;
+$isDarkTheme: false !default;
 @if ($isDarkTheme) 
 {
     $text-color: #ffffff;
