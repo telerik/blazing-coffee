@@ -6,6 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Theme\main.scss" />
+    <Content Include="Theme\_common.scss" />
+    <Content Include="Theme\_typography.scss" />
+    <Content Include="Theme\_variables.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.0-rc1.20223.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0-rc1.20223.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.0-rc1.20223.4" PrivateAssets="all" />
@@ -13,7 +28,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\blazor\Telerik.Blazor\Telerik.Blazor.csproj" />
     <ProjectReference Include="..\Shared\BlazingCoffee.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Telerik.DataSource">
+      <HintPath>..\..\..\blazor\Telerik.Blazor\bin\Debug\netstandard2.1\Telerik.DataSource.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

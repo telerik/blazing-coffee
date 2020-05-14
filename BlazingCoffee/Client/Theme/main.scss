@@ -1,0 +1,13 @@
+// Default theme variables here
+
+@import "./variables";
+@import "../../node_modules/@progress/kendo-theme-default/dist/all.scss";
+@import "./typography";
+@import "./header";
+@import "./drawer";
+@import "./card-container";
+@import "./common";
+
+a.k-link.k-state-selected {
+    border-radius: 5px;
+}

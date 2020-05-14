@@ -1,11 +1,24 @@
 @page "/fetchdata"
 @inject HttpClient Http
 
-<h1>Weather forecast</h1>
-
-<p>This component demonstrates fetching data from the server.</p>
-
-<EmployeeTable Employees="employees"/>
+<div id="Dashboard" class="dashboard-page main-content">
+    <div class="card-container grid">
+        <h3 class="card-title">Employees</h3>
+        <div class="card-component">
+            <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu">
+                <GridColumns>
+                    <GridColumn Field="@nameof(Employee.FullName)"></GridColumn>
+                    <GridColumn Field="@nameof(Employee.Address)"></GridColumn>
+                    <GridColumn Field="@nameof(Employee.Phone)"></GridColumn>
+                    <GridColumn Field="@nameof(Employee.Team.TeamColor)"></GridColumn>
+                    <GridColumn Field="@nameof(Employee.Team.TeamName)"></GridColumn>
+                    <GridColumn Field="@nameof(Employee.Rating)"></GridColumn>
+                    <GridColumn Field="@nameof(Employee.Budget)"></GridColumn>
+                </GridColumns>
+            </TelerikGrid>
+        </div>
+    </div>
+</div>
 
 @code {
     private Employee[] employees;
