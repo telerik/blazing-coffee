@@ -10,8 +10,14 @@
                     <GridColumn Field="@nameof(Employee.FullName)"></GridColumn>
                     <GridColumn Field="@nameof(Employee.Address)"></GridColumn>
                     <GridColumn Field="@nameof(Employee.Phone)"></GridColumn>
-                    <GridColumn Field="@nameof(Employee.Team.TeamColor)"></GridColumn>
-                    <GridColumn Field="@nameof(Employee.Team.TeamName)"></GridColumn>
+                    <GridColumn Field="Team.TeamName" Title="Team Name">
+                        <Template>
+                            @{ 
+                                var e = (Employee)context;
+                                <span style="color: @e.Team.TeamColor">@e.Team.TeamName</span>
+                            }
+                        </Template>
+                    </GridColumn>
                     <GridColumn Field="@nameof(Employee.Rating)"></GridColumn>
                     <GridColumn Field="@nameof(Employee.Budget)"></GridColumn>
                 </GridColumns>
