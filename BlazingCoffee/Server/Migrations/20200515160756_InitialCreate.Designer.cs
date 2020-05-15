@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazingCoffee.Server.Migrations
 {
     [DbContext(typeof(CoffeeContext))]
-    [Migration("20200507164213_InitialCreate")]
+    [Migration("20200515160756_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,7 +26,13 @@ namespace BlazingCoffee.Server.Migrations
                     b.Property<string>("Code")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Continent")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Region")
                         .HasColumnType("TEXT");
 
                     b.HasKey("CountryId");
@@ -165,6 +171,26 @@ namespace BlazingCoffee.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Locales");
+                });
+
+            modelBuilder.Entity("BlazingCoffee.Shared.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Cost")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Sku")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("BlazingCoffee.Shared.Models.Team", b =>

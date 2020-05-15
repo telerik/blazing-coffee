@@ -1,30 +1,26 @@
 @page "/fetchdata"
 @inject HttpClient Http
+@layout DashboardCardLayout
 
-<div id="Dashboard" class="dashboard-page main-content">
-    <div class="card-container grid">
-        <h3 class="card-title">Employees</h3>
-        <div class="card-component">
-            <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu">
-                <GridColumns>
-                    <GridColumn Field="@nameof(Employee.FullName)"></GridColumn>
-                    <GridColumn Field="@nameof(Employee.Address)"></GridColumn>
-                    <GridColumn Field="@nameof(Employee.Phone)"></GridColumn>
-                    <GridColumn Field="Team.TeamName" Title="Team Name">
-                        <Template>
-                            @{ 
-                                var e = (Employee)context;
-                                <span style="color: @e.Team.TeamColor">@e.Team.TeamName</span>
-                            }
-                        </Template>
-                    </GridColumn>
-                    <GridColumn Field="@nameof(Employee.Rating)"></GridColumn>
-                    <GridColumn Field="@nameof(Employee.Budget)"></GridColumn>
-                </GridColumns>
-            </TelerikGrid>
-        </div>
-    </div>
-</div>
+<CardContainer Title="Employees">
+    <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu">
+        <GridColumns>
+            <GridColumn Field="@nameof(Employee.FullName)"></GridColumn>
+            <GridColumn Field="@nameof(Employee.Address)"></GridColumn>
+            <GridColumn Field="@nameof(Employee.Phone)"></GridColumn>
+            <GridColumn Field="Team.TeamName" Title="Team Name">
+                <Template>
+                    @{
+                        var e = (Employee)context;
+                        <span style="color: @e.Team.TeamColor">@e.Team.TeamName</span>
+                    }
+                </Template>
+            </GridColumn>
+            <GridColumn Field="@nameof(Employee.Rating)"></GridColumn>
+            <GridColumn Field="@nameof(Employee.Budget)"></GridColumn>
+        </GridColumns>
+    </TelerikGrid>
+</CardContainer>
 
 @code {
     private Employee[] employees;

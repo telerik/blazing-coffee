@@ -17,6 +17,7 @@ namespace BlazingCoffee.Server
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Locale> Locales { get; set; }
+        public DbSet<Product> Products { get; set; }
 
     }
 }

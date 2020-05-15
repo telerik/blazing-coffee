@@ -13,7 +13,9 @@ namespace BlazingCoffee.Server.Migrations
                     CountryId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
-                    Code = table.Column<string>(nullable: true)
+                    Code = table.Column<string>(nullable: true),
+                    Region = table.Column<string>(nullable: true),
+                    Continent = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -62,6 +64,21 @@ namespace BlazingCoffee.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Locales", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Group = table.Column<string>(nullable: true),
+                    Sku = table.Column<string>(nullable: true),
+                    Cost = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -127,6 +144,9 @@ namespace BlazingCoffee.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "Locales");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Teams");

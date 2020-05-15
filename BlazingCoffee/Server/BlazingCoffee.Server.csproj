@@ -25,5 +25,9 @@
     <ProjectReference Include="..\Shared\BlazingCoffee.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 
 </Project>

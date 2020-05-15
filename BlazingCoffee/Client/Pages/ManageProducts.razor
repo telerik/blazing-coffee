@@ -1,0 +1,51 @@
+﻿@page "/manage-products"
+@inject HttpClient Http
+@layout DashboardCardLayout
+
+    <CardContainer Title="Manage Products">
+        <TelerikGrid Data="products" Groupable="true" @ref="Grid">
+            <GridColumns>
+                <GridColumn Field="@nameof(Product.Group)"></GridColumn>
+                <GridColumn Field="@nameof(Product.Sku)" Title="Product"></GridColumn>
+                <GridColumn Field="@nameof(Product.Cost)">
+                    <Template>
+                        @{
+                            var prod = (Product)context;
+                            <span>@prod.Cost.ToString("C")</span>
+                        }
+                    </Template>
+                </GridColumn>
+            </GridColumns>
+        </TelerikGrid>
+    </CardContainer>
+
+    @code {
+        Product[] products;
+        TelerikGrid<Product> Grid { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+            products = await Http.GetFromJsonAsync<Product[]>("api/products");
+            await SetGridGroup();
+        }
+
+        async Task SetGridGroup()
+        {
+            GridState<Product> desiredState = new GridState<Product>()
+            {
+                GroupDescriptors = new List<GroupDescriptor>()
+        {
+                new GroupDescriptor()
+                {
+                    Member = "Group",
+                    MemberType = typeof(string)
+                }
+            },
+                // choose indexes of groups to be collapsed (they are all expanded by default)
+                // CollapsedGroups = new List<int>() { 0 },
+            };
+
+            await Grid.SetState(desiredState);
+        }
+
+    }
