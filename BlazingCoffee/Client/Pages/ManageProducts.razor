@@ -1,5 +1,6 @@
 ﻿@page "/manage-products"
 @inject HttpClient Http
+@inject NavigationManager NavigationManager
 @layout DashboardCardLayout
 
 <CardContainer Title="Manage Products">
@@ -16,12 +17,22 @@
                 </Template>
             </GridColumn>
         </GridColumns>
+        <DetailTemplate>
+            @{
+                var product = (Product)context;
+                <TelerikUpload AllowedExtensions="AllowedExtensions"
+                               SaveUrl="@SaveUrl" 
+                                OnUpload="@((e)=> OnUploadHandler(e, product.Id))">
+                </TelerikUpload>
+            }
+        </DetailTemplate>
     </TelerikGrid>
 </CardContainer>
 
 @code {
     Product[] products;
     TelerikGrid<Product> Grid { get; set; }
+    List<string> AllowedExtensions => new List<string> { ".docx", ".pdf" };
 
     protected override async Task OnInitializedAsync()
     {
@@ -35,7 +46,7 @@
         GridState<Product> desiredState = new GridState<Product>()
         {
             GroupDescriptors = new List<GroupDescriptor>()
-        {
+{
             new GroupDescriptor()
             {
                 Member = "Group",
@@ -47,6 +58,22 @@
         };
 
         await Grid.SetState(desiredState);
+    }
+
+    void OnUploadHandler(UploadEventArgs e, int productId)
+    {
+        // for example, user name
+        e.RequestData.Add("productId", productId);
+        // for example, authentication token
+        //e.RequestHeaders.Add("CustomHeader", "SomeHeaderValue");
+    }
+
+    // a sample way of generating the URLs to the endpoint
+    public string SaveUrl => ToAbsoluteUrl("api/products/addfile");
+
+    public string ToAbsoluteUrl(string url)
+    {
+        return $"{NavigationManager.BaseUri}{url}";
     }
 
 }

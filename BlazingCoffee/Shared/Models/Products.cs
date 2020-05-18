@@ -12,5 +12,6 @@ namespace BlazingCoffee.Shared.Models
         public string Group { get; set; }
         public string Sku { get; set; }
         public double Cost { get; set; }
+        //public string NutritionFilePath { get; set; }
     }
 }

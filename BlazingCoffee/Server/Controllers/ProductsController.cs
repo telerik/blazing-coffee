@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BlazingCoffee.Server;
 using BlazingCoffee.Shared.Models;
+using System.Net.Mime;
+using BlazingCoffee.Server.IO;
+using System.IO;
 
 namespace BlazingCoffee.Server.Controllers
 {
@@ -29,7 +32,7 @@ namespace BlazingCoffee.Server.Controllers
         }
 
         // GET: api/Products/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
@@ -84,6 +87,29 @@ namespace BlazingCoffee.Server.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+        }
+
+        [Route("addfile")]
+        [HttpPost]
+        public async Task<ActionResult<Product>> PostProductFile(IEnumerable<IFormFile> files, [FromForm] int productId)
+        {
+            var document = files.First();
+            if (document.Length == 0) return new BadRequestResult();
+            
+            var documentBytes = FileConverter.ToBytes(document);
+            if (document.ContentType == MimeTypes.Docx)
+            {
+                // Convert with Telerik DPL
+                documentBytes = FileConverter.ConvertWordToPDF(documentBytes);
+            }
+            // Save to disk
+            await System.IO.File.WriteAllBytesAsync(@"c:\temp\doc.pdf", documentBytes);
+            // Attach to record
+            var product = await _context.Products.FindAsync(productId);
+            // TODO: Save file in a meaningful way
+            //product.NutritionFilePath = "";
+            //await _context.SaveChangesAsync();
+            return NoContent();
         }
 
         // DELETE: api/Products/5
