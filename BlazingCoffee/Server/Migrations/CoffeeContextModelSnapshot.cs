@@ -183,6 +183,9 @@ namespace BlazingCoffee.Server.Migrations
                     b.Property<string>("Group")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("NutritionFileName")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Sku")
                         .HasColumnType("TEXT");
 

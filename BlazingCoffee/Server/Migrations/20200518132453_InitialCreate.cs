@@ -74,7 +74,8 @@ namespace BlazingCoffee.Server.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Group = table.Column<string>(nullable: true),
                     Sku = table.Column<string>(nullable: true),
-                    Cost = table.Column<double>(nullable: false)
+                    Cost = table.Column<double>(nullable: false),
+                    NutritionFileName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

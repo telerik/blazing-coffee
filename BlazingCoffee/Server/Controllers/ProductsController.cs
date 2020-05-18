@@ -10,6 +10,7 @@ using BlazingCoffee.Shared.Models;
 using System.Net.Mime;
 using BlazingCoffee.Server.IO;
 using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace BlazingCoffee.Server.Controllers
 {
@@ -17,10 +18,12 @@ namespace BlazingCoffee.Server.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        private readonly IHostingEnvironment _hostingEnvironment;
         private readonly CoffeeContext _context;
 
-        public ProductsController(CoffeeContext context)
+        public ProductsController(CoffeeContext context, IHostingEnvironment environment)
         {
+            _hostingEnvironment = environment;
             _context = context;
         }
 
@@ -103,12 +106,15 @@ namespace BlazingCoffee.Server.Controllers
                 documentBytes = FileConverter.ConvertWordToPDF(documentBytes);
             }
             // Save to disk
-            await System.IO.File.WriteAllBytesAsync(@"c:\temp\doc.pdf", documentBytes);
+            var fileName = $"{productId}-NutritionInformation-{DateTime.Now:MM-dd-yyyy}.pdf";
+
+            await System.IO.File.WriteAllBytesAsync($@"{_hostingEnvironment.WebRootPath}\nutrition\{fileName}", documentBytes);
+            
             // Attach to record
             var product = await _context.Products.FindAsync(productId);
-            // TODO: Save file in a meaningful way
-            //product.NutritionFilePath = "";
-            //await _context.SaveChangesAsync();
+            product.NutritionFileName = fileName;
+            await _context.SaveChangesAsync();
+
             return NoContent();
         }
 
