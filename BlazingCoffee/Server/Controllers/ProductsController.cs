@@ -34,6 +34,14 @@ namespace BlazingCoffee.Server.Controllers
             return await _context.Products.ToListAsync();
         }
 
+        // GET: api/Products/groups
+        [HttpGet]
+        [Route("groups")]
+        public async Task<ActionResult<IEnumerable<string>>> GetProductGroups()
+        {
+            return await _context.Products.Select(p => p.Group).Distinct().ToListAsync();
+        }
+
         // GET: api/Products/5
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
@@ -98,7 +106,7 @@ namespace BlazingCoffee.Server.Controllers
         {
             var document = files.First();
             if (document.Length == 0) return new BadRequestResult();
-            
+
             var documentBytes = FileConverter.ToBytes(document);
             if (document.ContentType == MimeTypes.Docx)
             {
@@ -109,7 +117,7 @@ namespace BlazingCoffee.Server.Controllers
             var fileName = $"{productId}-NutritionInformation-{DateTime.Now:MM-dd-yyyy}.pdf";
 
             await System.IO.File.WriteAllBytesAsync($@"{_hostingEnvironment.WebRootPath}\nutrition\{fileName}", documentBytes);
-            
+
             // Attach to record
             var product = await _context.Products.FindAsync(productId);
             product.NutritionFileName = fileName;

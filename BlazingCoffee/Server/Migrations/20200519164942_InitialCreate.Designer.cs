@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazingCoffee.Server.Migrations
 {
     [DbContext(typeof(CoffeeContext))]
-    [Migration("20200518132453_InitialCreate")]
+    [Migration("20200519164942_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,6 +183,7 @@ namespace BlazingCoffee.Server.Migrations
                         .HasColumnType("REAL");
 
                     b.Property<string>("Group")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NutritionFileName")

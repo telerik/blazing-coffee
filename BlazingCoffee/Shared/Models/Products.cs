@@ -9,6 +9,7 @@ namespace BlazingCoffee.Shared.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public string Group { get; set; }
         public string Sku { get; set; }
         public double Cost { get; set; }

@@ -181,6 +181,7 @@ namespace BlazingCoffee.Server.Migrations
                         .HasColumnType("REAL");
 
                     b.Property<string>("Group")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NutritionFileName")

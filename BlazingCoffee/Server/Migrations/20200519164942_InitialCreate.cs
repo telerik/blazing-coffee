@@ -72,7 +72,7 @@ namespace BlazingCoffee.Server.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Group = table.Column<string>(nullable: true),
+                    Group = table.Column<string>(nullable: false),
                     Sku = table.Column<string>(nullable: true),
                     Cost = table.Column<double>(nullable: false),
                     NutritionFileName = table.Column<string>(nullable: true)
