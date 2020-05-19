@@ -8,6 +8,7 @@
                  Sortable="true" Pageable="true" PageSize="10"
                  OnUpdate=@UpdateItem OnDelete=@DeleteItem OnCreate=@CreateItem>
         <GridToolBar>
+            <GridCommandButton Command="ToggleId" OnClick="@(()=>isIdVisible = !isIdVisible)" Icon="parameter-integer">Toggle Id</GridCommandButton>
             <GridCommandButton Command="Add" Icon="add">Add Product</GridCommandButton>
         </GridToolBar>
         <GridColumns>
@@ -77,8 +78,6 @@
             </GridCommandColumn>
         </GridColumns>
     </TelerikGrid>
-    <label for="IdToggle">Show Id column</label>
-    <input id="IdToggle" type="checkbox" @bind="isIdVisible" />
 </CardContainer>
 
 
