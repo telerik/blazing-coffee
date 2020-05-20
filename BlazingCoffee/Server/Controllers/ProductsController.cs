@@ -18,10 +18,10 @@ namespace BlazingCoffee.Server.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly CoffeeContext _context;
 
-        public ProductsController(CoffeeContext context, IHostingEnvironment environment)
+        public ProductsController(CoffeeContext context, IWebHostEnvironment environment)
         {
             _hostingEnvironment = environment;
             _context = context;
