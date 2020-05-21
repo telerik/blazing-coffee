@@ -47,17 +47,6 @@
     }
 
     SalesViewModel Model { get; set; } = new SalesViewModel();
-    TelerikGrid<Sale> Grid { get; set; }
-    DateTime? StartValue { get; set; } = DateTime.Now.AddYears(-1);
-    DateTime? EndValue { get; set; } = DateTime.Now.AddDays(10);
-    FilterDescriptor StartFilter => new FilterDescriptor("TransactionDate", FilterOperator.IsGreaterThan, StartValue);
-    FilterDescriptor EndFilter => new FilterDescriptor("TransactionDate", FilterOperator.IsLessThan, EndValue);
-
-    void OnStateInit(GridStateEventArgs<Sale> args)
-    {
-        args.GridState.FilterDescriptors.Add(StartFilter);
-        args.GridState.FilterDescriptors.Add(EndFilter);
-    }
 
     async Task ReadItems(GridReadEventArgs args)
     {
@@ -66,6 +55,19 @@
         {
             Model = await response.Content.ReadFromJsonAsync<SalesViewModel>();
         }
+    }
+
+    #region Custom Filtering
+    TelerikGrid<Sale> Grid { get; set; }
+    DateTime? StartValue { get; set; } = DateTime.Now.AddYears(-4);
+    DateTime? EndValue { get; set; } = DateTime.Now.AddDays(10);
+    FilterDescriptor StartFilter => new FilterDescriptor("TransactionDate", FilterOperator.IsGreaterThan, StartValue);
+    FilterDescriptor EndFilter => new FilterDescriptor("TransactionDate", FilterOperator.IsLessThan, EndValue);
+
+    void OnStateInit(GridStateEventArgs<Sale> args)
+    {
+        args.GridState.FilterDescriptors.Add(StartFilter);
+        args.GridState.FilterDescriptors.Add(EndFilter);
     }
 
     void StartValueChangedHandler(DateTime? currStart)
@@ -96,4 +98,5 @@
             await Grid.SetState(state);
         }
     }
+    #endregion
 }

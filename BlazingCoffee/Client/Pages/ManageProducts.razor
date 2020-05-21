@@ -9,7 +9,7 @@
                  OnUpdate=@UpdateItem OnDelete=@DeleteItem OnCreate=@CreateItem>
         <GridToolBar>
             <GridCommandButton Command="ToggleId" OnClick="@(()=>isIdVisible = !isIdVisible)" Icon="parameter-integer">Toggle Id</GridCommandButton>
-            <GridCommandButton Command="Add" Icon="add">Add Product</GridCommandButton>
+            <GridCommandButton Command="Add" Icon="add" Class="k-primary">Add Product</GridCommandButton>
         </GridToolBar>
         <GridColumns>
             @if (isIdVisible)
@@ -71,10 +71,10 @@
                 </EditorTemplate>
             </GridColumn>
             <GridCommandColumn>
-                <GridCommandButton Command="Edit" Icon="edit">Edit</GridCommandButton>
-                <GridCommandButton Command="Save" Icon="save" ShowInEdit="true">Update</GridCommandButton>
+                <GridCommandButton Command="Edit" Icon="edit" Class="k-primary">Edit</GridCommandButton>
+                <GridCommandButton Command="Save" Icon="save" Class="k-primary" ShowInEdit="true">Update</GridCommandButton>
                 <GridCommandButton Command="Cancel" Icon="cancel" ShowInEdit="true">Cancel</GridCommandButton>
-                <GridCommandButton Command="Delete" Icon="delete">Delete</GridCommandButton>
+                <GridCommandButton Command="Delete" Icon="delete" >Delete</GridCommandButton>
             </GridCommandColumn>
         </GridColumns>
     </TelerikGrid>

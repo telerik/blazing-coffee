@@ -20298,6 +20298,10 @@ a {
       background-color: transparent;
       background-image: none;
       color: #ffffff; }
+    .header .menu-button .k-button:hover {
+      background-color: #528dee;
+      padding: 5px;
+      border-radius: 50%; }
   .header .title {
     display: flex;
     flex: 1 0 auto;
@@ -20700,3 +20704,6 @@ a {
 
 a.k-link.k-state-selected {
   border-radius: 5px; }
+
+.validation-message {
+  color: #F26666; }

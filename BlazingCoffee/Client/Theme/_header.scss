@@ -24,6 +24,12 @@
             background-image: none;
             color: $primary-contrast;
         }
+
+        .k-button:hover {
+            background-color: $info;
+            padding: 5px;
+            border-radius: 50%;
+        }
     }
 
     .title {

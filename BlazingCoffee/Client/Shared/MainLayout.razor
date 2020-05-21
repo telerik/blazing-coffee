@@ -17,7 +17,8 @@
     </div>
 </header>
 <TelerikRootComponent>
-    <TelerikDrawer @bind-Expanded="@Expanded" Data="Data" MiniMode="true" Mode="DrawerMode.Push" @bind-SelectedItem="SelectedItem">
+    <TelerikDrawer @bind-Expanded="@Expanded" @bind-SelectedItem="SelectedItem"
+                   Data="Data" MiniMode="true" Mode="DrawerMode.Push">
         <Content>
             @Body
         </Content>
