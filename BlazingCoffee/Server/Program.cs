@@ -38,8 +38,9 @@ namespace BlazingCoffee.Server
                 try
                 {
                     var context = services.GetRequiredService<CoffeeContext>();
+                    var environment = services.GetRequiredService<IWebHostEnvironment>();
                     context.Database.Migrate();
-                    DbInitializer.Initialize(context);
+                    DbInitializer.Initialize(context, environment);
                 }
                 catch (Exception ex)
                 {

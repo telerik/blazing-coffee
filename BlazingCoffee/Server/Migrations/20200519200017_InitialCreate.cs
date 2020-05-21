@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlazingCoffee.Server.Migrations
 {
@@ -83,6 +84,30 @@ namespace BlazingCoffee.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sales",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Region = table.Column<string>(nullable: true),
+                    Country = table.Column<string>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
+                    StoreId = table.Column<string>(nullable: true),
+                    TransactionDate = table.Column<DateTime>(nullable: false),
+                    TransactionId = table.Column<int>(nullable: false),
+                    ProductGroup = table.Column<string>(nullable: true),
+                    Sku = table.Column<string>(nullable: true),
+                    Amount = table.Column<double>(nullable: false),
+                    PromotionId = table.Column<int>(nullable: false),
+                    CustomerInfo = table.Column<int>(nullable: false),
+                    PaymentType = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sales", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Teams",
                 columns: table => new
                 {
@@ -148,6 +173,9 @@ namespace BlazingCoffee.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "Sales");
 
             migrationBuilder.DropTable(
                 name: "Teams");

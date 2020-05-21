@@ -1,16 +1,24 @@
-﻿using BlazingCoffee.Shared.Models;
+﻿using BlazingCoffee.Server.IO;
+using BlazingCoffee.Shared.Models;
+using CsvHelper;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.ObjectPool;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 
 namespace BlazingCoffee.Server.Data
 {
     public class DbInitializer
     {
-        public static void Initialize(CoffeeContext context)
+        public static void Initialize(CoffeeContext context, IWebHostEnvironment environment)
         {
             //context.Database.EnsureCreated();
+            SeedSales(environment, context);
             SeedCountry(context);
             SeedTeams(context);
             SeedEmployees(context);
@@ -1879,6 +1887,38 @@ namespace BlazingCoffee.Server.Data
                 }
             };
             context.Locales.AddRange(locales);
+            context.SaveChanges();
+        }
+
+        private static void SeedSales(IWebHostEnvironment environment, CoffeeContext context)
+        {
+            if (context.Sales.Any())
+            {
+                return;
+            }
+
+            var importPath = Path.Combine(environment.WebRootPath, @"imports\finserv.csv");
+
+            using var reader = new StreamReader(importPath);
+            using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+            var records = csv.GetRecords<SalesImportDTO>();
+            IEnumerable<Sale> import = records.Select(dto => new Sale
+            {
+                Amount = dto.Amount,
+                Code = dto.Code,
+                Country = dto.Country,
+                CustomerInfo = dto.CustomerInfo,
+                PromotionId = dto.PromotionId,
+                PaymentType = dto.PaymentType,
+                Sku = dto.Product,
+                ProductGroup = dto.ProductGroup,
+                Region = dto.Region,
+                StoreId = dto.StoreId,
+                TransactionId = dto.TransactionId,
+                TransactionDate = DateTime.Parse($"{dto.TransactionDate} {dto.TransactionHour}")
+            });
+
+            context.AddRange(import);
             context.SaveChanges();
         }
     }
