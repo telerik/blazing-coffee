@@ -4,7 +4,7 @@
 @layout DashboardCardLayout
 
 <CardContainer Title="Manage Products">
-    <TelerikGrid Data=Products Groupable=true EditMode=GridEditMode.Popup
+    <TelerikGrid Data="Products" Groupable="true" EditMode="GridEditMode.Popup"
                  Sortable="true" Pageable="true" PageSize="10"
                  OnUpdate=@UpdateItem OnDelete=@DeleteItem OnCreate=@CreateItem>
         <GridToolBar>
@@ -74,7 +74,7 @@
                 <GridCommandButton Command="Edit" Icon="edit" Class="k-primary">Edit</GridCommandButton>
                 <GridCommandButton Command="Save" Icon="save" Class="k-primary" ShowInEdit="true">Update</GridCommandButton>
                 <GridCommandButton Command="Cancel" Icon="cancel" ShowInEdit="true">Cancel</GridCommandButton>
-                <GridCommandButton Command="Delete" Icon="delete" >Delete</GridCommandButton>
+                <GridCommandButton Command="Delete" Icon="delete" ShowInEdit="false">Delete</GridCommandButton>
             </GridCommandColumn>
         </GridColumns>
     </TelerikGrid>

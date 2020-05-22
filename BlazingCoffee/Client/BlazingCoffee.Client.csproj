@@ -10,10 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\css\main-dark.css" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Theme\main.scss" />
     <Content Include="Theme\_common.scss" />
     <Content Include="Theme\_typography.scss" />

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BlazingCoffee.Shared.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BlazingCoffee.Server;
-using BlazingCoffee.Shared.Models;
 using Telerik.DataSource;
 using Telerik.DataSource.Extensions;
 

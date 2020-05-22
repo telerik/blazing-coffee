@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BlazingCoffee.Server.IO;
+using BlazingCoffee.Shared.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BlazingCoffee.Server;
-using BlazingCoffee.Shared.Models;
-using System.Net.Mime;
-using BlazingCoffee.Server.IO;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BlazingCoffee.Server.Controllers
 {

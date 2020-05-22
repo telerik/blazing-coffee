@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BlazingCoffee.Server.IO
+﻿namespace BlazingCoffee.Server.IO
 {
     public static class MimeTypes
     {

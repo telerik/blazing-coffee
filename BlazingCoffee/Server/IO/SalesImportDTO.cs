@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace BlazingCoffee.Server.IO
+﻿namespace BlazingCoffee.Server.IO
 {
     public class SalesImportDTO
     {
