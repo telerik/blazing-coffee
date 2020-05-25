@@ -1,6 +1,7 @@
 ﻿using BlazingCoffee.Shared;
 using BlazingCoffee.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace BlazingCoffee.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<DataEnvelope<Sale>>> GetSales([FromBody]DataSourceRequest request)
         {
-            var result = await _context.Sales.ToDataSourceResultAsync(request);
+            DataSourceResult result = await _context.Sales.ToDataSourceResultAsync(request);
             var data = new DataEnvelope<Sale>
             {
                 CurrentPageData = result.Data.OfType<Sale>().ToList(),

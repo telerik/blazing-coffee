@@ -90,7 +90,7 @@
         {
             var state = Grid.GetState();
             // clear TransactionDate filters
-            state.FilterDescriptors = state.FilterDescriptors.Where(f => (f as FilterDescriptor).Member != "TransactionDate").ToList();
+            state.FilterDescriptors = state.FilterDescriptors.Where(f => (f as FilterDescriptor)?.Member != "TransactionDate").ToList();
             // assign new TransactionDate filters
             state.FilterDescriptors.Add(StartFilter());
             state.FilterDescriptors.Add(EndFilter());
