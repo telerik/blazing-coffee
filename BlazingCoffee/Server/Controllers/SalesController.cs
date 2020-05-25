@@ -1,5 +1,7 @@
-﻿using BlazingCoffee.Shared.Models;
+﻿using BlazingCoffee.Shared;
+using BlazingCoffee.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Telerik.DataSource;
@@ -20,10 +22,16 @@ namespace BlazingCoffee.Server.Controllers
 
         // GET: api/Sales
         [HttpPost]
-        public async Task<ActionResult<DataSourceResult>> GetSales([FromBody]DataSourceRequest request)
+        public async Task<ActionResult<DataEnvelope<Sale>>> GetSales([FromBody]DataSourceRequest request)
         {
             var result = await _context.Sales.ToDataSourceResultAsync(request);
-            return result;
+            var data = new DataEnvelope<Sale>
+            {
+                CurrentPageData = result.Data.OfType<Sale>().ToList(),
+                TotalItemCount = result.Total
+
+            };
+            return data;
         }
 
         // GET: api/Sales/5

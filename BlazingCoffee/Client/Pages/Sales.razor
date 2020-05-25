@@ -1,11 +1,13 @@
 ﻿@page "/"
 @inject HttpClient Http
 
+<!-- Demo 1: Remote Sort, Filter, and Paging -->
+
 <CardContainer Title="Sales">
     <TelerikGrid @ref="Grid" Height="500px" FilterMode="@GridFilterMode.FilterMenu"
                  Sortable="true" Pageable="true" PageSize="10"
                  OnStateInit="@((GridStateEventArgs<Sale> args) => OnStateInit(args))"
-                 Data=@Model.Data TotalCount=@Model.Total OnRead=@ReadItems>
+                 Data=@Model.CurrentPageData TotalCount=@Model.TotalItemCount OnRead=@ReadItems>
         <GridToolBar>
             <label>Report Range:</label>
             <TelerikDateRangePicker StartValue="@StartValue" EndValue="@EndValue"
@@ -41,20 +43,14 @@
 @code {
 
     #region Grid Data Processing
-    class SalesViewModel
-    {
-        public IEnumerable<Sale> Data { get; set; } = new List<Sale>();
-        public int Total { get; set; } = 0;
-    }
-
-    SalesViewModel Model { get; set; } = new SalesViewModel();
+    DataEnvelope<Sale> Model { get; set; } = new DataEnvelope<Sale>();
 
     async Task ReadItems(GridReadEventArgs args)
     {
         var response = await Http.PostAsJsonAsync("api/sales", args.Request);
         if (response.IsSuccessStatusCode)
         {
-            Model = await response.Content.ReadFromJsonAsync<SalesViewModel>();
+            Model = await response.Content.ReadFromJsonAsync<DataEnvelope<Sale>>();
         }
     }
     #endregion

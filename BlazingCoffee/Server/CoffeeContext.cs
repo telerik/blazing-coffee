@@ -14,11 +14,11 @@ namespace BlazingCoffee.Server
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
             // Not for production, show EF query data in the console
             optionsBuilder.UseLoggerFactory(ConsoleLogger);
             // Show EF Query parameter values in the console
             optionsBuilder.EnableSensitiveDataLogging();
+            base.OnConfiguring(optionsBuilder);
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Team> Teams { get; set; }
