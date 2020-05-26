@@ -8,8 +8,12 @@
     <base href="/" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="_content/telerik.ui.for.blazor/js/telerik-blazor.js"></script>
-    <link href="css/main.css" rel="stylesheet" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"/>
-    <link href="css/main-dark.css" rel="stylesheet" media="(prefers-color-scheme: dark)"/>
+    <link href="css/main.css" rel="stylesheet" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+    <link href="css/main-dark.css" rel="stylesheet" media="(prefers-color-scheme: dark)" />
+    <!-- PWA -->
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <!-- /PWA -->
 </head>
 
 <body>
@@ -21,6 +25,9 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <!-- PWA -->
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <!-- /PWA -->
 </body>
 
 </html>
