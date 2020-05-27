@@ -2,9 +2,40 @@
 @inject BlazingCoffee.Services.PublicClient Http
 
 <CardContainer Title="Home">
-    <ul>
-        <li><a href="/sales">Sales</a></li>
-        <li><a href="/manage-employees">Human Capital</a></li>
-        <li><a href="/manage-products">Manage Products</a></li>
-    </ul>
+    <div class="card-menu">
+        <Card Title="Sales">
+            <CardContent>
+                <p>Report on Sales over time.</p>
+            </CardContent>
+            <ActionTemplate>
+                <span class="k-card-action"><a href="/sales" class="k-button k-flat k-primary">Sales</a></span>
+            </ActionTemplate>
+            <FooterTemplate>
+                <span title="Login required."><TelerikIcon Icon="@IconName.Lock" /></span>
+            </FooterTemplate>
+        </Card>
+        <Card Title="Human Capital">
+            <CardContent>
+                <p>Manage employees and teams.</p>
+            </CardContent>
+            <ActionTemplate>
+                <span class="k-card-action"><a href="/manage-employees" class="k-button k-flat k-primary">Human Capital</a></span>
+            </ActionTemplate>
+            <FooterTemplate>
+                <span title="Login required."><TelerikIcon Icon="@IconName.Lock" /></span>
+            </FooterTemplate>
+        </Card>
+        <Card Title="Manage Products">
+            <CardContent>
+                <p>Manage products and nutrition information.</p>
+            </CardContent>
+            <ActionTemplate>
+                <span class="k-card-action"><a href="/manage-products" class="k-button k-flat k-primary">Manage Products</a></span>
+            </ActionTemplate>
+            <FooterTemplate>
+                <span title="Login required."><TelerikIcon Icon="@IconName.Lock" /></span>
+            </FooterTemplate>
+        </Card>
+        <TelerikTooltip TargetSelector=".k-card-footer>span[title]" Position=@TooltipPosition.Top ShowOn="@TooltipShowEvent.Hover"/>
+    </div>
 </CardContainer>

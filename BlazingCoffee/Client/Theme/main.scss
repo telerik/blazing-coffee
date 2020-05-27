@@ -8,6 +8,18 @@
 @import "./card-container";
 @import "./common";
 
+// TODO: Refactor to partial
+.card-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+
+.card-menu > .k-card {
+    width: 280px;
+    margin-right: 2em;
+}
+
 a.k-link.k-state-selected {
     border-radius: 5px;
 }
