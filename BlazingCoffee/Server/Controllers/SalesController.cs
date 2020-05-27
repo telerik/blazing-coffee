@@ -1,5 +1,6 @@
 ﻿using BlazingCoffee.Shared;
 using BlazingCoffee.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace BlazingCoffee.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class SalesController : ControllerBase
     {
         private readonly CoffeeContext _context;

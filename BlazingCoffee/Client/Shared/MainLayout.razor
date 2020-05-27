@@ -13,6 +13,7 @@
         </div>
         <div class="settings">
             @*<span>Language</span>*@
+            <LoginDisplay />
         </div>
     </div>
 </header>
@@ -32,7 +33,8 @@
     IEnumerable<object> Data { get; set; } =
         new List<object>
         {
-            new { Text = "Sales", Icon = IconName.Dollar, Url="/"},
+            new { Text = "Home", Icon = IconName.ArrowRoot, Url="/"},
+            new { Text = "Sales", Icon = IconName.Dollar, Url="/sales"},
             new { Text = "Human Capital", Icon = IconName.TellAFriend, Url="/manage-employees"},
             new { Text = "Manage Products", Icon = IconName.Grid, Url="/manage-products"}
         };

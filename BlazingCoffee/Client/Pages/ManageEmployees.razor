@@ -1,6 +1,7 @@
 @page "/manage-employees"
 @inject HttpClient Http
 @layout DashboardCardLayout
+@attribute [Authorize]
 
 <CardContainer Title="Employees">
     <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu">

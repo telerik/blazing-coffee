@@ -79,6 +79,17 @@
             display: flex;
             flex: 0 0 auto;
             align-items: center;
+            padding: 20px;
+
+            a {
+                color: $primary-contrast;
+                padding: 10px;
+
+                &:hover {
+                    color: $info;
+                }
+            }
+
         }
 
         .k-dropdown {
