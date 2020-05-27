@@ -1,4 +1,10 @@
 ﻿@page "/"
-<CardContainer Title="Home">
+@inject BlazingCoffee.Services.PublicClient Http
 
+<CardContainer Title="Home">
+    <ul>
+        <li><a href="/sales">Sales</a></li>
+        <li><a href="/manage-employees">Human Capital</a></li>
+        <li><a href="/manage-products">Manage Products</a></li>
+    </ul>
 </CardContainer>

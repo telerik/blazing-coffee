@@ -25,6 +25,7 @@ $series-e: #528dee;
 $series-f: #7378d9;
 $background-color: scale-color($accent, $saturation: -55%, $lightness: 65%);
 
+$link-color: $info;
 
 $isDarkTheme: false !default;
 @if ($isDarkTheme) 

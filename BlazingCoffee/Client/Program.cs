@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+using System.Xml.Serialization;
+using BlazingCoffee.Services;
 
 namespace BlazingCoffee.Client
 {
@@ -19,6 +21,7 @@ namespace BlazingCoffee.Client
             builder.RootComponents.Add<App>("app");
             builder.Services.AddTelerikBlazor();
 
+            builder.Services.AddHttpClient<PublicClient>(client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
             builder.Services.AddHttpClient("BlazingCoffee.ServerAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
                             .AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
 
