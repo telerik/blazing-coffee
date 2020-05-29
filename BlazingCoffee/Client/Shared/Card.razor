@@ -7,7 +7,7 @@
         <h5 class="k-card-title">@Title</h5>
         <h6 class="k-card-subtitle">@Subtitle</h6>
     </div>
-    <img class="k-card-image" src="https://via.placeholder.com/278x150">
+    <img class="k-card-image" src="@ImageUrl">
     <div class="k-card-body">
         @CardContent
     </div>
@@ -30,6 +30,7 @@
     [Parameter] public string Width { get; set; }
     [Parameter] public string Title { get; set; }
     [Parameter] public string Subtitle { get; set; }
+    [Parameter] public string ImageUrl { get; set; }
     [Parameter] public RenderFragment CardContent { get; set; }
     [Parameter] public RenderFragment ActionTemplate { get; set; }
     [Parameter] public RenderFragment FooterTemplate { get; set; }

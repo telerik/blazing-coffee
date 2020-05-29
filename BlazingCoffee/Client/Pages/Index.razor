@@ -1,9 +1,8 @@
 ﻿@page "/"
 @inject BlazingCoffee.Services.PublicClient Http
 
-<CardContainer Title="Home">
     <div class="card-menu">
-        <Card Title="Sales">
+        <Card Title="Sales" ImageUrl="./img/Sales.jpg">
             <CardContent>
                 <p>Report on Sales over time.</p>
             </CardContent>
@@ -14,7 +13,7 @@
                 <span title="Login required."><TelerikIcon Icon="@IconName.Lock" /></span>
             </FooterTemplate>
         </Card>
-        <Card Title="Human Capital">
+        <Card Title="Human Capital" ImageUrl="./img/Schedule.jpg">
             <CardContent>
                 <p>Manage employees and teams.</p>
             </CardContent>
@@ -25,7 +24,7 @@
                 <span title="Login required."><TelerikIcon Icon="@IconName.Lock" /></span>
             </FooterTemplate>
         </Card>
-        <Card Title="Manage Products">
+        <Card Title="Manage Products" ImageUrl="./img/coffee.jpg">
             <CardContent>
                 <p>Manage products and nutrition information.</p>
             </CardContent>
@@ -38,4 +37,3 @@
         </Card>
         <TelerikTooltip TargetSelector=".k-card-footer>span[title]" Position=@TooltipPosition.Top ShowOn="@TooltipShowEvent.Hover"/>
     </div>
-</CardContainer>
