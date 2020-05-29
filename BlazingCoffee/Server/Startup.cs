@@ -110,7 +110,9 @@ namespace BlazingCoffee.Server
 
             app.UseRouting();
 
-            ConfigureAuth(app);
+            app.UseIdentityServer();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -118,13 +120,6 @@ namespace BlazingCoffee.Server
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
             });
-
-            static void ConfigureAuth(IApplicationBuilder app)
-            {
-                app.UseIdentityServer();
-                app.UseAuthentication();
-                app.UseAuthorization();
-            }
 
             static void ConfigureSwagger(IApplicationBuilder app)
             {

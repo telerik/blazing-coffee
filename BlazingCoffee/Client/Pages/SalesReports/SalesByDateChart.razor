@@ -1,0 +1,47 @@
+﻿@namespace BlazingCoffee.Client.Pages
+@inject HttpClient Http
+
+@if (Data != null)
+{
+    <CardContainer Title="Reporting">
+        <TelerikChart Height="230px">
+            <ChartTitle Text="Sales and Revenue Total" />
+
+            <ChartSeriesItems>
+                @foreach (var item in Data.GroupBy(v => v.Region))
+                {
+                    <ChartSeries Type="ChartSeriesType.Column"
+                                 Name="@item.Key"
+                                 Data="@item"
+                                 Field="@nameof(SalesByDateViewModel.Sum)"
+                                 CategoryField="@nameof(SalesByDateViewModel.Date)" />
+                }
+            </ChartSeriesItems>
+
+            <ChartValueAxes>
+                <ChartValueAxis Name="RevenueAxis">
+                    <ChartValueAxisTitle Text="Total Sales" />
+                    <ChartValueAxisLabels Format="{0:C}" />
+                    <ChartValueAxisMajorGridLines Visible="false" />
+                </ChartValueAxis>
+            </ChartValueAxes>
+
+            <ChartCategoryAxes>
+                <ChartCategoryAxis Name="Sales By Year">
+                    <ChartCategoryAxisLabels Format="{0:yyyy-MMM}" />
+                </ChartCategoryAxis>
+            </ChartCategoryAxes>
+
+        </TelerikChart>
+    </CardContainer>
+}
+
+@code {
+
+    [Parameter] public SalesByDateViewModel[] Data { get; set; }
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    model = await Http.GetFromJsonAsync<SalesByDateViewModel[]>($"api/sales/RegionalSalesByDate/{StartValue?.ToString("s", CultureInfo.InvariantCulture)}/{EndValue?.ToString("s", CultureInfo.InvariantCulture)}");
+    //}
+}
