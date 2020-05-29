@@ -4,9 +4,18 @@
 @attribute [Authorize]
 
 <CardContainer Title="Employees">
-    <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu">
+    <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu" Resizable="true">
         <GridColumns>
-            <GridColumn Field="@nameof(Employee.FullName)"></GridColumn>
+            <GridColumn Field="@nameof(Employee.ImgId)" Title="" Sortable="false" Width="100px" Filterable="false">
+                <Template>
+                    @{
+                        var e = (Employee)context;
+                        var gender = e.Id % 2 == 0 ? "men" : "women";
+                        <img style="width: 64px; border: 2px solid @e.Team.TeamColor" class="k-avatar-rounded" src=@($"https://randomuser.me/api/portraits/{gender}/{e.Id}.jpg") />
+                    }
+                </Template>
+            </GridColumn>
+            <GridColumn Field="@nameof(Employee.FullName)" Title="Name"></GridColumn>
             <GridColumn Field="@nameof(Employee.Address)"></GridColumn>
             <GridColumn Field="@nameof(Employee.Phone)"></GridColumn>
             <GridColumn Field="Team.TeamName" Title="Team Name">
@@ -17,8 +26,22 @@
                     }
                 </Template>
             </GridColumn>
-            <GridColumn Field="@nameof(Employee.Rating)"></GridColumn>
-            <GridColumn Field="@nameof(Employee.Budget)"></GridColumn>
+            <GridColumn Field="@nameof(Employee.Rating)">
+                <Template>
+                    @{
+                        var e = (Employee)context;
+                        <Rating Value="e.Rating" />
+                    }
+                </Template>
+            </GridColumn>
+            <GridColumn Field="@nameof(Employee.Budget)">
+                <Template>
+                    @{
+                        var e = (Employee)context;
+                        <span>@e.Budget.ToString("C")</span>
+                    }
+                </Template>
+            </GridColumn>
         </GridColumns>
     </TelerikGrid>
 </CardContainer>
