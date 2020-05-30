@@ -28,18 +28,12 @@
             </GridColumn>
             <GridColumn Field="@nameof(Employee.Rating)">
                 <Template>
-                    @{
-                        var e = (Employee)context;
-                        <Rating Value="e.Rating" />
-                    }
+                    <Rating Value="((Employee)context).Rating" />
                 </Template>
             </GridColumn>
             <GridColumn Field="@nameof(Employee.Budget)">
                 <Template>
-                    @{
-                        var e = (Employee)context;
-                        <span>@e.Budget.ToString("C")</span>
-                    }
+                    @( ((Employee)context).Budget.ToString("C") )
                 </Template>
             </GridColumn>
         </GridColumns>

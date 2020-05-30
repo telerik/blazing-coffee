@@ -9,6 +9,14 @@
 @import "./common";
 
 // TODO: Refactor to partial
+.image-cell {
+    display: flex;
+    align-items: center;
+    &>img {
+        margin-right: 10px;
+    }
+}
+
 .card-menu {
     display: flex;
     flex-wrap: wrap;

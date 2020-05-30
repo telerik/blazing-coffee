@@ -20,39 +20,29 @@
             {
                 <GridColumn Field="@nameof(Product.Id)" Width="50px" Editable="false" />
             }
-            <GridColumn Field="@nameof(Product.Group)" Title="" Editable="false" Filterable="false" Width="100px" Sortable="false">
+            <GridColumn Field="@nameof(Product.Group)">
                 <Template>
                     @{
                         var prod = (Product)context;
-                        <img width="64" src="./img/products/@(prod.Group.Replace(" ", "")).jpg" class="k-avatar-rounded" />
+                        <div class="image-cell">
+                            <img width="64" src="./img/products/@(prod.Group.Replace(" ", "")).jpg" class="k-avatar-rounded" />
+                            <span>@prod.Group</span>
+                        </div>
                     }
                 </Template>
-            </GridColumn>
-            <GridColumn Field="@nameof(Product.Group)">
                 <EditorTemplate>
-                    @{
-                        var prod = (Product)context;
-                        <TelerikDropDownList Data="@Groups" Width="260px"
-                                             @bind-Value="@prod.Group"
-                                             TextField="ProductName"
-                                             ValueField="ProductName">
-                            <ItemTemplate Context="group">
-                                @{
-                                    <img width="64" src="./img/products/@(group.Replace(" ", "")).jpg" class="k-avatar-rounded" />
-                                    <span style="padding-left:5px">@group</span>
-                                }
-                            </ItemTemplate>
-                        </TelerikDropDownList>
-                    }
+                    <TelerikDropDownList Data="@Groups" Width="260px" @bind-Value="((Product)context).Group" TextField="ProductName" ValueField="ProductName">
+                        <ItemTemplate Context="group">
+                            <img width="64" src="./img/products/@(group.Replace(" ", "")).jpg" class="k-avatar-rounded" />
+                            <span style="padding-left:5px">@group</span>
+                        </ItemTemplate>
+                    </TelerikDropDownList>
                 </EditorTemplate>
             </GridColumn>
             <GridColumn Field="@nameof(Product.Sku)" Title="Product"></GridColumn>
             <GridColumn Field="@nameof(Product.Cost)">
                 <Template>
-                    @{
-                        var prod = (Product)context;
-                        <span>@prod.Cost.ToString("C")</span>
-                    }
+                    @( ((Product)context).Cost.ToString("C") )
                 </Template>
             </GridColumn>
             <GridColumn Field="@nameof(Product.NutritionFileName)" Title="Nutrition Info.">
