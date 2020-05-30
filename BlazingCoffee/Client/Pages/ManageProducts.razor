@@ -1,10 +1,9 @@
-﻿@page "/manage-products"
+﻿@attribute [Authorize]
+@page "/manage-products"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
-@layout DashboardCardLayout
 @inject IAccessTokenProvider accessTokenProvider
 
-@attribute [Authorize]
     <!-- Demo CRUD -->
 
 <CardContainer Title="Manage Products">
