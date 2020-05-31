@@ -1,10 +1,14 @@
-﻿@attribute [Authorize]
+﻿<!--
+    This demo showcases CRUD operations using the Telerik Data Grid.
+    To simplify the codebase an ObservableCollection is used maintain an updated UI.
+    A custom editor is used to display groups and allow file uploads.
+    CRUD, ObservableCollection, EditorTemplate, Upload, Authorization Token, File Upload
+-->
+@attribute [Authorize]
 @page "/manage-products"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IAccessTokenProvider accessTokenProvider
-
-    <!-- Demo CRUD -->
 
 <CardContainer Title="Manage Products">
     <TelerikGrid Data="Products" Groupable="true" EditMode="GridEditMode.Popup"
@@ -89,35 +93,17 @@
 
 
 @code {
+
+    #region Grid Operations
     bool isIdVisible = false;
     ObservableCollection<Product> Products { get; set; }
     IEnumerable<string> Groups { get; set; }
-    List<string> AllowedExtensions => new List<string> { ".docx", ".pdf" };
-    public string SaveUrl => $"{NavigationManager.BaseUri}api/products/addfile";
 
     protected override async Task OnInitializedAsync()
     {
         var data = await Http.GetFromJsonAsync<Product[]>("api/products");
         Groups = await Http.GetFromJsonAsync<IEnumerable<string>>("api/products/groups");
         Products = new ObservableCollection<Product>(data);
-    }
-
-    async Task OnUploadHandler(UploadEventArgs e, int productId)
-    {
-        e.RequestData.Add("productId", productId);
-
-
-        // for example, authorization token
-        var tokenResult = await accessTokenProvider.RequestAccessToken();
-        tokenResult.TryGetToken(out var token);
-        e.RequestHeaders.Add("authorization", $"Bearer {token.Value}");
-    }
-
-    async Task OnSuccessHandler(Product product)
-    {
-        // After the file uploads, get the new file name from the server and update the grid item
-        product = await Http.GetFromJsonAsync<Product>($"api/products/{product.Id}");
-        Products.First(p => p.Id == product.Id).NutritionFileName = product.NutritionFileName;
     }
 
     async Task CreateItem(GridCommandEventArgs args)
@@ -153,5 +139,30 @@
             productToUpdate.Group = argsItem.Group;
         }
     }
+    #endregion
+
+    #region File Upload
+
+    List<string> AllowedExtensions => new List<string> { ".docx", ".pdf" };
+    public string SaveUrl => $"{NavigationManager.BaseUri}api/products/addfile";
+
+    async Task OnUploadHandler(UploadEventArgs e, int productId)
+    {
+        e.RequestData.Add("productId", productId);
+
+        // authorization token
+        var tokenResult = await accessTokenProvider.RequestAccessToken();
+        tokenResult.TryGetToken(out var token);
+        e.RequestHeaders.Add("authorization", $"Bearer {token.Value}");
+    }
+
+    async Task OnSuccessHandler(Product product)
+    {
+        // After the file uploads, get the new file name from the server and update the grid item
+        product = await Http.GetFromJsonAsync<Product>($"api/products/{product.Id}");
+        Products.First(p => p.Id == product.Id).NutritionFileName = product.NutritionFileName;
+    }
+
+    #endregion
 
 }
