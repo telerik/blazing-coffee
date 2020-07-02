@@ -1,4 +1,5 @@
-﻿@inherits LayoutComponentBase
+﻿@namespace BlazingCoffee.Client.Shared
+@inherits LayoutComponentBase
 @inject NavigationManager navigationManger
 @using BlazingCoffee.Client.Shared.NavMenu
 
@@ -70,7 +71,7 @@
             new DrawerItem{ Text = "Telerik", Icon = IconName.HyperlinkGlobe, Url="https://telerik.com", Group = "ext"},
             new DrawerItem{ Text = "Documentation", Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
             new DrawerItem{ Text = "Support", Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
-                                                                                        };
+                                                                                            };
 
     string SelectedTheme = "auto";
     IEnumerable<string> Themes => new List<string> { "auto" }; // TODO add manual settings, "light", "dark" };
