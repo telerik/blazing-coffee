@@ -45,3 +45,8 @@ a.k-link.k-state-selected {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
+
+.full-screen > h1 {
+    padding: 1em;
+    background-color: $base-bg;
+}
