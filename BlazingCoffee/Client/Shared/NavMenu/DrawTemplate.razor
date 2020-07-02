@@ -6,6 +6,7 @@
         <LoginDisplay />
     </header>
     <ul role="menubar" aria-orientation="vertical">
+        <li class="k-drawer-item k-drawer-separator"></li>
         @foreach (DrawerItem item in Data.Where(item => item.Group == "app"))
         {
             if (item == SelectedItem)
@@ -27,6 +28,7 @@
     <footer>
         <h3 class="title">More Info</h3>
         <ul role="menubar" aria-orientation="vertical">
+            <li class="k-drawer-item k-drawer-separator"></li>
             @foreach (DrawerItem item in Data.Where(item => item.Group == "ext"))
             {
                 <li class="k-drawer-item" data-index="1" tabindex="-1" role="menuitem" aria-label="@item.Text" @onclick="@(()=>navigationManger.NavigateTo(item.Url))">

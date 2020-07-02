@@ -4,7 +4,7 @@
 @using BlazingCoffee.Client.Shared.NavMenu
 
 <TelerikRootComponent>
-    <TelerikDrawer @bind-Expanded="@Expanded" Width="280px" Data="Data" Mode="DrawerMode.Push" Position="DrawerPosition.Left">
+    <TelerikDrawer @bind-Expanded="@Expanded" Width="280px" Data="Data" Mode="DrawerMode.Push" Position="DrawerPosition.Left" MiniMode="true">
         <Template>
             <DrawTemplate Data="context"></DrawTemplate>
         </Template>

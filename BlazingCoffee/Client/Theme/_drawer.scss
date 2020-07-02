@@ -10,6 +10,7 @@
 
 .k-drawer-items {
     & .title {
+        display: none; // hide from mini-mode, use .k-drawer-expanded to enable.
         text-transform: uppercase;
         font-size: 1em;
         padding: 1em;
@@ -18,7 +19,7 @@
     }
 
     & > header {
-        display: flex;
+        display: none; // hide from mini-mode, use .k-drawer-expanded to enable.
         flex-direction: column;
         align-items: center;
         padding: 1em;
@@ -28,5 +29,15 @@
             margin: 1em;
             max-width: 96px;
         }
+    }
+}
+
+/*  Here we capture if the drawer is expanded.
+    If the drawer is in mini-mode, these items
+    are hidden by default.
+*/
+.k-drawer-expanded .k-drawer-items {
+    & > header, & .title {
+        display: flex;
     }
 }
