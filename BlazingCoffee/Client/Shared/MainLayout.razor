@@ -1,44 +1,81 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager navigationManger
+@using BlazingCoffee.Client.Shared.NavMenu
 
-<header class="header">
-    <div class="nav-container">
-        <div class="menu-button">
-            <TelerikButton Icon="@IconName.Menu" OnClick="@(() => Expanded = !Expanded)" />
-        </div>
-
-        <div class="title">
-            <h1>Blazing Coffee Warehouse</h1>
-        </div>
-        <div class="settings">
-            @*<span>Language</span>*@
-            <LoginDisplay />
-        </div>
-    </div>
-</header>
 <TelerikRootComponent>
-    <TelerikDrawer @bind-Expanded="@Expanded" @bind-SelectedItem="SelectedItem"
-                   Data="Data" MiniMode="true" Mode="DrawerMode.Push">
+    <TelerikDrawer @bind-Expanded="@Expanded" Width="280px" Data="Data" Mode="DrawerMode.Push" Position="DrawerPosition.Left">
+        <Template>
+            <DrawTemplate Data="context"></DrawTemplate>
+        </Template>
         <Content>
+            <header class="header">
+                <div class="nav-container">
+                    <div class="menu-button">
+                        <TelerikButton Icon="@IconName.Menu" OnClick="@(() => Expanded = !Expanded)" />
+                    </div>
+
+                    <div class="title">
+                        <h1>Blazing Coffee Warehouse</h1>
+                    </div>
+                    <div class="settings">
+                        <TelerikButton Icon="@IconName.Gear" OnClick="@(() => SettingsExpanded = !SettingsExpanded)" />
+                    </div>
+                </div>
+            </header>
             @Body
         </Content>
     </TelerikDrawer>
+    <TelerikWindow @bind-Visible="SettingsExpanded" Modal="true">
+        <WindowTitle>
+            Settings
+        </WindowTitle>
+        <WindowActions>
+            <WindowAction Name="Close" />
+        </WindowActions>
+        <WindowContent>
+            <div class="k-widget k-form">
+                <div class="k-form-field">
+                    <label class="k-label k-form-label" for="theme">
+                        Theme
+                    </label>
+                    <div class="k-form-field-wrap">
+                        <TelerikDropDownList Id="theme" Data="Themes" TValue="string" TItem="string" @bind-Value="SelectedTheme" />
+                    </div>
+                </div>
+                <div class="k-form-field">
+                    <label class="k-label k-form-label" for="language">
+                        Language
+                    </label>
+                    <div class="k-form-field-wrap">
+                        <TelerikDropDownList Id="language" Data="Languages" TValue="string" TItem="string" @bind-Value="SelectedLanguage" />
+                    </div>
+                </div>
+            </div>
+        </WindowContent>
+    </TelerikWindow>
 </TelerikRootComponent>
 
 @code {
-    bool Expanded { get; set; } = false;
-    object SelectedItem { get; set; }
+    bool Expanded { get; set; } = true;
+    bool SettingsExpanded { get; set; }
 
-    IEnumerable<object> Data { get; set; } =
-        new List<object>
-        {
-            new { Text = "Home", Icon = IconName.ArrowRoot, Url="/"},
-            new { Text = "Sales", Icon = IconName.Dollar, Url="/sales"},
-            new { Text = "Human Capital", Icon = IconName.TellAFriend, Url="/manage-employees"},
-            new { Text = "Manage Products", Icon = IconName.Grid, Url="/manage-products"}
-        };
-
-    protected override void OnInitialized()
+    IEnumerable<DrawerItem> Data =>
+    new List<DrawerItem>
     {
-        SelectedItem = Data.First();
-    }
+            new DrawerItem{ Text = "Home", Icon = IconName.ArrowRoot, Url="/", Group = "app"},
+            new DrawerItem{ Text = "Sales", Icon = IconName.Dollar, Url="/sales", Group = "app"},
+            new DrawerItem{ Text = "Human Capital", Icon = IconName.TellAFriend, Url="/manage-employees", Group = "app"},
+            new DrawerItem{ Text = "Manage Products", Icon = IconName.Grid, Url="/manage-products", Group = "app"},
+            new DrawerItem{ Text = "GitHub", Icon = IconName.Share, Url="https://github.com/telerik/blazing-coffee", Group = "ext"},
+            new DrawerItem{ Text = "Telerik", Icon = IconName.HyperlinkGlobe, Url="https://telerik.com", Group = "ext"},
+            new DrawerItem{ Text = "Documentation", Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
+            new DrawerItem{ Text = "Support", Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
+                                                                                        };
+
+    string SelectedTheme = "auto";
+    IEnumerable<string> Themes => new List<string> { "auto" }; // TODO add manual settings, "light", "dark" };
+
+    string SelectedLanguage = "en";
+    IEnumerable<string> Languages => new List<string> { "en" }; // TODO add Globalization
+
 }

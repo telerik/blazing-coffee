@@ -36,3 +36,12 @@ a.k-link.k-state-selected {
 .validation-message {
     color: $error;
 }
+
+.k-window {
+    border-radius: 3px;
+}
+
+.k-window-titlebar {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}

@@ -1,0 +1,57 @@
+﻿@inject NavigationManager navigationManger
+@using BlazingCoffee.Client.Shared.NavMenu
+
+<div class="k-drawer-items">
+    <header>
+        <LoginDisplay />
+    </header>
+    <ul role="menubar" aria-orientation="vertical">
+        @foreach (DrawerItem item in Data.Where(item => item.Group == "app"))
+        {
+            if (item == SelectedItem)
+            {
+                <li class="k-drawer-item k-state-selected" data-index="0" tabindex="0" role="menuitem" aria-label="@item.Text">
+                    <TelerikIcon Icon="@item.Icon"></TelerikIcon>
+                    <span class="k-item-text">@item.Text</span>
+                </li>
+            }
+            else
+            {
+                <li class="k-drawer-item" data-index="1" tabindex="-1" role="menuitem" aria-label="@item.Text" @onclick="@(()=> ItemSelected(item))">
+                    <TelerikIcon Icon="@item.Icon"></TelerikIcon>
+                    <span class="k-item-text">@item.Text</span>
+                </li>
+            }
+        }
+    </ul>
+    <footer>
+        <h3 class="title">More Info</h3>
+        <ul role="menubar" aria-orientation="vertical">
+            @foreach (DrawerItem item in Data.Where(item => item.Group == "ext"))
+            {
+                <li class="k-drawer-item" data-index="1" tabindex="-1" role="menuitem" aria-label="@item.Text" @onclick="@(()=>navigationManger.NavigateTo(item.Url))">
+                    <TelerikIcon Icon="@item.Icon"></TelerikIcon>
+                    <span class="k-item-text">@item.Text</span>
+                </li>
+            }
+        </ul>
+    </footer>
+</div>
+
+@code {
+
+    [Parameter] public IEnumerable<DrawerItem> Data { get; set; }
+
+    DrawerItem SelectedItem;
+    protected override void OnInitialized()
+    {
+        SelectedItem = Data.First();
+    }
+
+    void ItemSelected(DrawerItem item)
+    {
+        SelectedItem = item;
+        navigationManger.NavigateTo(item.Url);
+    }
+
+}

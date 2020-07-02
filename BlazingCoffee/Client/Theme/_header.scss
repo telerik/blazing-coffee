@@ -15,21 +15,21 @@
     }
 
     .menu-button {
-        flex: 0 0 50px;
+        flex: 0 0 70px;
         text-align: center;
+    }
 
-        .k-button {
-            border: none;
-            background-color: transparent;
-            background-image: none;
-            color: $primary-contrast;
-        }
+    .k-button {
+        border: none;
+        background-color: transparent;
+        background-image: none;
+        color: $primary-contrast;
+    }
 
-        .k-button:hover {
-            background-color: $info;
-            padding: 5px;
-            border-radius: 50%;
-        }
+    .k-button:hover {
+        background-color: $info;
+        padding: 5px;
+        border-radius: 50%;
     }
 
     .title {
@@ -51,10 +51,6 @@
             width: 40px;
             height: 40px;
         }
-    }
-
-    .settings {
-        display: none;
     }
 }
 
@@ -89,7 +85,6 @@
                     color: $info;
                 }
             }
-
         }
 
         .k-dropdown {
