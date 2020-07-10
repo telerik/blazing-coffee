@@ -1,38 +1,40 @@
 ﻿@page "/"
+@inject IStringLocalizer<Index> L
+@inject IStringLocalizer<Global> G
 
-    <div class="card-menu">
-        <Card Title="Sales" ImageUrl="./img/Sales.jpg">
-            <CardContent>
-                <p>Report on Sales over time.</p>
-            </CardContent>
-            <ActionTemplate>
-                <span class="k-card-action"><a href="/sales" class="k-button k-flat k-primary">Sales</a></span>
-            </ActionTemplate>
-            <FooterTemplate>
-                <span title="Login required."><TelerikIcon Icon="@IconName.Lock" /></span>
-            </FooterTemplate>
-        </Card>
-        <Card Title="Human Capital" ImageUrl="./img/Schedule.jpg">
-            <CardContent>
-                <p>Manage employees and teams.</p>
-            </CardContent>
-            <ActionTemplate>
-                <span class="k-card-action"><a href="/manage-employees" class="k-button k-flat k-primary">Human Capital</a></span>
-            </ActionTemplate>
-            <FooterTemplate>
-                <span title="Login required."><TelerikIcon Icon="@IconName.Lock" /></span>
-            </FooterTemplate>
-        </Card>
-        <Card Title="Manage Products" ImageUrl="./img/coffee.jpg">
-            <CardContent>
-                <p>Manage products and nutrition information.</p>
-            </CardContent>
-            <ActionTemplate>
-                <span class="k-card-action"><a href="/manage-products" class="k-button k-flat k-primary">Manage Products</a></span>
-            </ActionTemplate>
-            <FooterTemplate>
-                <span title="Login required."><TelerikIcon Icon="@IconName.Lock" /></span>
-            </FooterTemplate>
-        </Card>
-        <TelerikTooltip TargetSelector=".k-card-footer>span[title]" Position=@TooltipPosition.Top ShowOn="@TooltipShowEvent.Hover"/>
-    </div>
+<div class="card-menu">
+    <Card Title="@L["Sales"]" ImageUrl="./img/Sales.jpg">
+        <CardContent>
+            <p>@L["Sales_Card_Title"]</p>
+        </CardContent>
+        <ActionTemplate>
+            <span class="k-card-action"><a href="/sales" class="k-button k-flat k-primary">@L["Sales"]</a></span>
+        </ActionTemplate>
+        <FooterTemplate>
+            <span title="@G["Login_Required_ToolTip"]"><TelerikIcon Icon="@IconName.Lock" /></span>
+        </FooterTemplate>
+    </Card>
+    <Card Title="@G["Human_Capital"]" ImageUrl="./img/Schedule.jpg">
+        <CardContent>
+            <p>@L["HumanCapital_Card_Title"]</p>
+        </CardContent>
+        <ActionTemplate>
+            <span class="k-card-action"><a href="/manage-employees" class="k-button k-flat k-primary">@G["Human_Capital"]</a></span>
+        </ActionTemplate>
+        <FooterTemplate>
+            <span title="@G["Login_Required_ToolTip"]"><TelerikIcon Icon="@IconName.Lock" /></span>
+        </FooterTemplate>
+    </Card>
+    <Card Title="@G["Manage_Products"]" ImageUrl="./img/coffee.jpg">
+        <CardContent>
+            <p>@L["ManageProducts_Card_Title"]</p>
+        </CardContent>
+        <ActionTemplate>
+            <span class="k-card-action"><a href="/manage-products" class="k-button k-flat k-primary">@G["Manage_Products"]</a></span>
+        </ActionTemplate>
+        <FooterTemplate>
+            <span title="@G["Login_Required_ToolTip"]"><TelerikIcon Icon="@IconName.Lock" /></span>
+        </FooterTemplate>
+    </Card>
+    <TelerikTooltip TargetSelector=".k-card-footer>span[title]" Position=@TooltipPosition.Top ShowOn="@TooltipShowEvent.Hover" />
+</div>

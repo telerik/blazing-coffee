@@ -1,6 +1,7 @@
 ﻿@namespace BlazingCoffee.Client.Shared
 @inherits LayoutComponentBase
 @inject NavigationManager navigationManger
+@inject IStringLocalizer<Global> G
 @using BlazingCoffee.Client.Shared.NavMenu
 
 <TelerikRootComponent>
@@ -64,14 +65,14 @@
     new List<DrawerItem>
     {
             new DrawerItem{ Text = "Home", Icon = IconName.ArrowRoot, Url="/", Group = "app"},
-            new DrawerItem{ Text = "Sales", Icon = IconName.Dollar, Url="/sales", Group = "app"},
-            new DrawerItem{ Text = "Human Capital", Icon = IconName.TellAFriend, Url="/manage-employees", Group = "app"},
-            new DrawerItem{ Text = "Manage Products", Icon = IconName.Grid, Url="/manage-products", Group = "app"},
+            new DrawerItem{ Text = G["Sales"], Icon = IconName.Dollar, Url="/sales", Group = "app"},
+            new DrawerItem{ Text = G["Human_Capital"], Icon = IconName.TellAFriend, Url="/manage-employees", Group = "app"},
+            new DrawerItem{ Text = G["Manage_Products"], Icon = IconName.Grid, Url="/manage-products", Group = "app"},
             new DrawerItem{ Text = "GitHub", Icon = IconName.Share, Url="https://github.com/telerik/blazing-coffee", Group = "ext"},
             new DrawerItem{ Text = "Telerik", Icon = IconName.HyperlinkGlobe, Url="https://telerik.com", Group = "ext"},
             new DrawerItem{ Text = "Documentation", Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
             new DrawerItem{ Text = "Support", Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
-                                                                                            };
+                                                                                                };
 
     string SelectedTheme = "auto";
     IEnumerable<string> Themes => new List<string> { "auto" }; // TODO add manual settings, "light", "dark" };

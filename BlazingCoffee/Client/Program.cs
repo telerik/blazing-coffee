@@ -29,6 +29,7 @@ namespace BlazingCoffee.Client
             builder.Services.AddTransient(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("BlazingCoffee.ServerAPI"));
 
             builder.Services.AddApiAuthorization();
+            builder.Services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
 
             await builder.Build().RunAsync();
         }
