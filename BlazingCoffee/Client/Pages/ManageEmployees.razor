@@ -1,6 +1,8 @@
 @attribute [Authorize]
 @page "/manage-employees"
 @inject HttpClient Http
+@using Telerik.Blazor.Services 
+@inject ITelerikStringLocalizer Localizer
 
 <CardContainer Title="Employees">
     <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu" Resizable="true">

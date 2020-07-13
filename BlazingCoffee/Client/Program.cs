@@ -10,6 +10,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using System.Xml.Serialization;
 using BlazingCoffee.Services;
+using Telerik.Blazor.Services;
+using BlazingCoffee.Shared.Localization;
+using Microsoft.JSInterop;
+using System.Globalization;
 
 namespace BlazingCoffee.Client
 {
@@ -30,8 +34,20 @@ namespace BlazingCoffee.Client
 
             builder.Services.AddApiAuthorization();
             builder.Services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
+            // register a custom localizer for the Telerik components, after registering the Telerik services
+            builder.Services.AddSingleton(typeof(ITelerikStringLocalizer), typeof(TelerikLocalizer));
+            
+            var host = builder.Build();
+            var jsInterop = host.Services.GetRequiredService<IJSRuntime>();
+            var result = await jsInterop.InvokeAsync<string>("blazorCulture.get");
+            if (result != null)
+            {
+                var culture = new CultureInfo(result);
+                CultureInfo.DefaultThreadCurrentCulture = culture;
+                CultureInfo.DefaultThreadCurrentUICulture = culture;
+            }
 
-            await builder.Build().RunAsync();
+            await host.RunAsync();
         }
     }
 }

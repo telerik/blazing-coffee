@@ -49,7 +49,7 @@
                         Language
                     </label>
                     <div class="k-form-field-wrap">
-                        <TelerikDropDownList Id="language" Data="Languages" TValue="string" TItem="string" @bind-Value="SelectedLanguage" />
+                        <CultureChooser />
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
             new DrawerItem{ Text = "Telerik", Icon = IconName.HyperlinkGlobe, Url="https://telerik.com", Group = "ext"},
             new DrawerItem{ Text = "Documentation", Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
             new DrawerItem{ Text = "Support", Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
-                                                                                                };
+                                                                                                    };
 
     string SelectedTheme = "auto";
     IEnumerable<string> Themes => new List<string> { "auto" }; // TODO add manual settings, "light", "dark" };
