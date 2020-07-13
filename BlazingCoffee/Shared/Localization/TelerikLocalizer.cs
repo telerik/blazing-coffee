@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazingCoffee.Shared.Resources;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Telerik.Blazor.Resources;
@@ -18,7 +19,7 @@ namespace BlazingCoffee.Shared.Localization
 
         public string GetStringFromResource(string key)
         {
-            return Messages.ResourceManager.GetString(key, Messages.Culture);
+            return TelerikMessages.ResourceManager.GetString(key, TelerikMessages.Culture);
         }
     }
 }
