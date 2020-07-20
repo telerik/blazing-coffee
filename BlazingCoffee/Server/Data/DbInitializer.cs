@@ -1896,6 +1896,7 @@ namespace BlazingCoffee.Server.Data
 
             var importPath = Path.Combine(environment.WebRootPath, @"imports\finserv.csv");
 
+            CultureInfo enUSCulture = new CultureInfo("en-US"); // Fixes data import for non-us users 
             using var reader = new StreamReader(importPath);
             using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
             var records = csv.GetRecords<SalesImportDTO>();
@@ -1912,7 +1913,7 @@ namespace BlazingCoffee.Server.Data
                 Region = dto.Region,
                 StoreId = dto.StoreId,
                 TransactionId = dto.TransactionId,
-                TransactionDate = DateTime.Parse($"{dto.TransactionDate} {dto.TransactionHour}")
+                TransactionDate = DateTime.Parse($"{dto.TransactionDate} {dto.TransactionHour}", enUSCulture.DateTimeFormat)
             });
 
             context.AddRange(import);
