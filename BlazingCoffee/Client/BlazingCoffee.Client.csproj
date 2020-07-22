@@ -30,10 +30,4 @@
     <ProjectReference Include="..\Shared\BlazingCoffee.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\Pages\Index.resx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
 </Project>

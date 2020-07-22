@@ -9,6 +9,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IAccessTokenProvider accessTokenProvider
+@inject ITelerikStringLocalizer L
 
 <CardContainer Title="Manage Products">
     <TelerikGrid Data="Products" Groupable="true" EditMode="GridEditMode.Popup"
@@ -82,10 +83,10 @@
                 </EditorTemplate>
             </GridColumn>
             <GridCommandColumn>
-                <GridCommandButton Command="Edit" Icon="edit" Class="k-primary">Edit</GridCommandButton>
-                <GridCommandButton Command="Save" Icon="save" Class="k-primary" ShowInEdit="true">Update</GridCommandButton>
-                <GridCommandButton Command="Cancel" Icon="cancel" ShowInEdit="true">Cancel</GridCommandButton>
-                <GridCommandButton Command="Delete" Icon="delete" ShowInEdit="false">Delete</GridCommandButton>
+                <GridCommandButton Command="Edit" Icon="edit" Class="k-primary">@L["Grid_Edit"]</GridCommandButton>
+                <GridCommandButton Command="Save" Icon="save" Class="k-primary" ShowInEdit="true">@L["Grid_Update"]</GridCommandButton>
+                <GridCommandButton Command="Cancel" Icon="cancel" ShowInEdit="true">@L["Grid_Cancel"]</GridCommandButton>
+                <GridCommandButton Command="Delete" Icon="delete" ShowInEdit="false">@L["Grid_Delete"]</GridCommandButton>
             </GridCommandColumn>
         </GridColumns>
     </TelerikGrid>

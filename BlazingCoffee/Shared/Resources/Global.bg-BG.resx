@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HumanCapital_Card_Title" xml:space="preserve">
-    <value>Manage employees and teams.</value>
+  <data name="Sales" xml:space="preserve">
+    <value>Продажби</value>
   </data>
-  <data name="ManageProducts_Card_Title" xml:space="preserve">
-    <value>Manage products and nutrition information.</value>
+  <data name="HumanCapital" xml:space="preserve">
+    <value>човешки капитал</value>
   </data>
-  <data name="Sales_Card_Title" xml:space="preserve">
-    <value>Report on Sales over time.</value>
+  <data name="Index_EmployeesCard_Description" xml:space="preserve">
+    <value>Управление на служители и екипи.</value>
+  </data>
+  <data name="Index_ProductsCard_Description" xml:space="preserve">
+    <value>Управлявайте информация за продуктите и хранителните стойности.</value>
+  </data>
+  <data name="Index_SalesCard_Description" xml:space="preserve">
+    <value>Отчет за продажбите във времето.</value>
+  </data>
+  <data name="ManageProducts" xml:space="preserve">
+    <value>Управление на продукти</value>
+  </data>
+  <data name="ToolTip_LoginRequired" xml:space="preserve">
+    <value>Изисква се вход</value>
   </data>
 </root>

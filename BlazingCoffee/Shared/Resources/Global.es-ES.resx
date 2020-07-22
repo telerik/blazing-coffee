@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Human_Capital" xml:space="preserve">
-    <value>Human Capital</value>
-  </data>
-  <data name="Login_Required_ToolTip" xml:space="preserve">
-    <value>Login required.</value>
-  </data>
-  <data name="Manage_Products" xml:space="preserve">
-    <value>Manage Products</value>
-  </data>
   <data name="Sales" xml:space="preserve">
-    <value>Sales</value>
+    <value>Ventas</value>
+  </data>
+  <data name="HumanCapital" xml:space="preserve">
+    <value>Capital Humano</value>
+  </data>
+  <data name="Index_EmployeesCard_Description" xml:space="preserve">
+    <value>Gestionar empleados y equipos.</value>
+  </data>
+  <data name="Index_ProductsCard_Description" xml:space="preserve">
+    <value>Gestionar productos e información nutricional.</value>
+  </data>
+  <data name="Index_SalesCard_Description" xml:space="preserve">
+    <value>Informe sobre ventas a lo largo del tiempo.</value>
+  </data>
+  <data name="ManageProducts" xml:space="preserve">
+    <value>Administrar productos</value>
+  </data>
+  <data name="ToolTip_LoginRequired" xml:space="preserve">
+    <value>Se requiere iniciar sesión</value>
   </data>
 </root>
