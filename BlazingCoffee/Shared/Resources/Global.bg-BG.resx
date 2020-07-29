@@ -189,4 +189,25 @@
   <data name="MoreInfo" xml:space="preserve">
     <value>Още информация...</value>
   </data>
+  <data name="Employees" xml:space="preserve">
+    <value>Служители</value>
+  </data>
+  <data name="Employee_Grid_Title_FullName" xml:space="preserve">
+    <value>Име</value>
+  </data>
+  <data name="Employee_Grid_Title_Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Employee_Grid_Title_Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Employee_Grid_Title_TeamName" xml:space="preserve">
+    <value>Име на екип</value>
+  </data>
+  <data name="Employee_Grid_Title_Rating" xml:space="preserve">
+    <value>Оценка</value>
+  </data>
+  <data name="Employee_Grid_Title_Budget" xml:space="preserve">
+    <value>Бюджет</value>
+  </data>
 </root>

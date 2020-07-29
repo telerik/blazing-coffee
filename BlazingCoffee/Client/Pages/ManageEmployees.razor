@@ -2,9 +2,9 @@
 @page "/manage-employees"
 @inject HttpClient Http
 @using Telerik.Blazor.Services 
-@inject ITelerikStringLocalizer Localizer
+@inject ITelerikStringLocalizer L
 
-<CardContainer Title="Employees">
+<CardContainer Title="@L["Employees"]">
     <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu" Resizable="true">
         <GridColumns>
             <GridColumn Field="@nameof(Employee.ImgId)" Title="" Sortable="false" Width="100px" Filterable="false">
@@ -16,10 +16,10 @@
                     }
                 </Template>
             </GridColumn>
-            <GridColumn Field="@nameof(Employee.FullName)" Title="Name"></GridColumn>
-            <GridColumn Field="@nameof(Employee.Address)"></GridColumn>
-            <GridColumn Field="@nameof(Employee.Phone)"></GridColumn>
-            <GridColumn Field="Team.TeamName" Title="Team Name">
+            <GridColumn Field="@nameof(Employee.FullName)" Title="@L["Employee_Grid_Title_FullName"]"></GridColumn>
+            <GridColumn Field="@nameof(Employee.Address)" Title="@L["Employee_Grid_Title_Address"]"></GridColumn>
+            <GridColumn Field="@nameof(Employee.Phone)" Title="@L["Employee_Grid_Title_Phone"]"></GridColumn>
+            <GridColumn Field="Team.TeamName" Title="@L["Employee_Grid_Title_TeamName"]">
                 <Template>
                     @{
                         var e = (Employee)context;
@@ -27,12 +27,12 @@
                     }
                 </Template>
             </GridColumn>
-            <GridColumn Field="@nameof(Employee.Rating)">
+            <GridColumn Field="@nameof(Employee.Rating)" Title="@L["Employee_Grid_Title_Rating"]">
                 <Template>
                     <Rating Value="((Employee)context).Rating" />
                 </Template>
             </GridColumn>
-            <GridColumn Field="@nameof(Employee.Budget)">
+            <GridColumn Field="@nameof(Employee.Budget)" Title="@L["Employee_Grid_Title_Budget"]">
                 <Template>
                     @( ((Employee)context).Budget.ToString("C") )
                 </Template>

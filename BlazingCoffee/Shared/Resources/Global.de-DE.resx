@@ -189,4 +189,25 @@
   <data name="MoreInfo" xml:space="preserve">
     <value>Weitere Informationen ...</value>
   </data>
+  <data name="Employees" xml:space="preserve">
+    <value>Mitarbeiter</value>
+  </data>
+  <data name="Employee_Grid_Title_FullName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Employee_Grid_Title_Address" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Employee_Grid_Title_Phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Employee_Grid_Title_TeamName" xml:space="preserve">
+    <value>Teamname</value>
+  </data>
+  <data name="Employee_Grid_Title_Rating" xml:space="preserve">
+    <value>Bewertung</value>
+  </data>
+  <data name="Employee_Grid_Title_Budget" xml:space="preserve">
+    <value>Budget</value>
+  </data>
 </root>

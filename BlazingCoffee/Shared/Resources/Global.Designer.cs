@@ -79,6 +79,69 @@ namespace BlazingCoffee.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Employee_Grid_Title_Address {
+            get {
+                return ResourceManager.GetString("Employee_Grid_Title_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Budget.
+        /// </summary>
+        public static string Employee_Grid_Title_Budget {
+            get {
+                return ResourceManager.GetString("Employee_Grid_Title_Budget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Employee_Grid_Title_FullName {
+            get {
+                return ResourceManager.GetString("Employee_Grid_Title_FullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string Employee_Grid_Title_Phone {
+            get {
+                return ResourceManager.GetString("Employee_Grid_Title_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rating.
+        /// </summary>
+        public static string Employee_Grid_Title_Rating {
+            get {
+                return ResourceManager.GetString("Employee_Grid_Title_Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Team Name.
+        /// </summary>
+        public static string Employee_Grid_Title_TeamName {
+            get {
+                return ResourceManager.GetString("Employee_Grid_Title_TeamName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        public static string Employees {
+            get {
+                return ResourceManager.GetString("Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Group.
         /// </summary>
         public static string Group {
