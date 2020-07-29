@@ -1,9 +1,10 @@
 ﻿@page "/sales"
+
 @using System.Globalization
 @attribute [Authorize]
 @inject HttpClient Http
 @inject ITelerikStringLocalizer L
-<!-- Demo 1: Remote Sort, Filter, and Paging -->
+
 <SalesByDateChart Data="chartData"></SalesByDateChart>
 <CardContainer Title="@L["Sales"]">
     <TelerikGrid @ref="Grid" Height="500px" FilterMode="@GridFilterMode.FilterMenu"
