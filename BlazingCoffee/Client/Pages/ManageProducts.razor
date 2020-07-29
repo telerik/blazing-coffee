@@ -11,20 +11,20 @@
 @inject IAccessTokenProvider accessTokenProvider
 @inject ITelerikStringLocalizer L
 
-<CardContainer Title="Manage Products">
+<CardContainer Title="@L["ManageProducts"]">
     <TelerikGrid Data="Products" Groupable="true" EditMode="GridEditMode.Popup"
                  Sortable="true" Pageable="true" PageSize="10"
                  OnUpdate=@UpdateItem OnDelete=@DeleteItem OnCreate=@CreateItem>
         <GridToolBar>
-            <GridCommandButton Command="ToggleId" OnClick="@(()=>isIdVisible = !isIdVisible)" Icon="parameter-integer">Toggle Id</GridCommandButton>
-            <GridCommandButton Command="Add" Icon="add" Class="k-primary">Add Product</GridCommandButton>
+            <GridCommandButton Command="ToggleId" OnClick="@(()=>isIdVisible = !isIdVisible)" Icon="parameter-integer">@L["Toggle_Id"]</GridCommandButton>
+            <GridCommandButton Command="Add" Icon="add" Class="k-primary">@L["ManageProducts_AddProduct"]</GridCommandButton>
         </GridToolBar>
         <GridColumns>
             @if (isIdVisible)
             {
-                <GridColumn Field="@nameof(Product.Id)" Width="50px" Editable="false" />
+                <GridColumn Field="@nameof(Product.Id)" Title="@L["Id"]" Width="50px" Editable="false" />
             }
-            <GridColumn Field="@nameof(Product.Group)">
+            <GridColumn Field="@nameof(Product.Group)" Title="@L["Group"]">
                 <Template>
                     @{
                         var prod = (Product)context;
@@ -43,23 +43,23 @@
                     </TelerikDropDownList>
                 </EditorTemplate>
             </GridColumn>
-            <GridColumn Field="@nameof(Product.Sku)" Title="Product"></GridColumn>
-            <GridColumn Field="@nameof(Product.Cost)">
+            <GridColumn Field="@nameof(Product.Sku)" Title="@L["Product"]"></GridColumn>
+            <GridColumn Field="@nameof(Product.Cost)" Title="@L["Cost"]">
                 <Template>
                     @( ((Product)context).Cost.ToString("C") )
                 </Template>
             </GridColumn>
-            <GridColumn Field="@nameof(Product.NutritionFileName)" Title="Nutrition Info.">
+            <GridColumn Field="@nameof(Product.NutritionFileName)" Title="@L["Nutrition Info."]">
                 <Template>
                     @{
                         var prod = (Product)context;
                         if (string.IsNullOrEmpty(prod.NutritionFileName))
                         {
-                            <span>Not Available</span>
+                            <span>@L["NotAvailable"]</span>
                         }
                         else
                         {
-                            <a href="/nutrition/@prod.NutritionFileName" target="_blank">View <TelerikIcon Icon="@IconName.FilePdf"></TelerikIcon></a>
+                            <a href="/nutrition/@prod.NutritionFileName" target="_blank">@L["View"]<TelerikIcon Icon="@IconName.FilePdf"></TelerikIcon></a>
                         }
                     }
                 </Template>
@@ -68,7 +68,7 @@
                         var prod = (Product)context;
                         if (prod.Id == 0)
                         {
-                            <span>Save, then edit to add nutrition info.</span>
+                            <span>@L["Product_Upload_SaveDialog"]</span>
                         }
                         else
                         {

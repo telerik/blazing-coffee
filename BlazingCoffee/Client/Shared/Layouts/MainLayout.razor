@@ -32,7 +32,7 @@
     </TelerikDrawer>
     <TelerikWindow @bind-Visible="SettingsExpanded" Modal="true">
         <WindowTitle>
-            Settings
+            @L["Settings"]
         </WindowTitle>
         <WindowActions>
             <WindowAction Name="Close" />
@@ -41,7 +41,7 @@
             <div class="k-widget k-form">
                 <div class="k-form-field">
                     <label class="k-label k-form-label" for="theme">
-                        Theme
+                        @L["SelectTheme"]
                     </label>
                     <div class="k-form-field-wrap">
                         <TelerikDropDownList Id="theme" Data="Themes" TValue="string" TItem="string" @bind-Value="SelectedTheme" />
@@ -49,7 +49,7 @@
                 </div>
                 <div class="k-form-field">
                     <label class="k-label k-form-label" for="language">
-                        Language
+                        @L["LanguageChooser_SelectLanguage"]
                     </label>
                     <div class="k-form-field-wrap">
                         <CultureChooser />
@@ -67,14 +67,14 @@
     IEnumerable<DrawerItem> Data =>
     new List<DrawerItem>
     {
-            new DrawerItem{ Text = "Home", Icon = IconName.ArrowRoot, Url="/", Group = "app"},
+            new DrawerItem{ Text = L["Home"], Icon = IconName.ArrowRoot, Url="/", Group = "home"},
             new DrawerItem{ Text = L["Sales"], Icon = IconName.Dollar, Url="/sales", Group = "app"},
             new DrawerItem{ Text = L["HumanCapital"], Icon = IconName.TellAFriend, Url="/manage-employees", Group = "app"},
             new DrawerItem{ Text = L["ManageProducts"], Icon = IconName.Grid, Url="/manage-products", Group = "app"},
             new DrawerItem{ Text = "GitHub", Icon = IconName.Share, Url="https://github.com/telerik/blazing-coffee", Group = "ext"},
             new DrawerItem{ Text = "Telerik", Icon = IconName.HyperlinkGlobe, Url="https://telerik.com", Group = "ext"},
-            new DrawerItem{ Text = "Documentation", Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
-            new DrawerItem{ Text = "Support", Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
+            new DrawerItem{ Text = L["Documentation"], Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
+            new DrawerItem{ Text = L["Support"], Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
                                                                                                             };
 
     string SelectedTheme = "auto";

@@ -4,7 +4,6 @@
 @inject NavigationManager NavigationManager
 
 <div style="margin-bottom: 20px;">
-    Select your language:
     <TelerikDropDownList Data="@Cultures"
                          Value="@SelectedCulture"
                          ValueChanged="@((string value) => { OnValueChanged(value); })"
@@ -25,6 +24,7 @@
         new  CultureData() { Text = "German", Value = "de-DE" },
         new  CultureData() { Text = "Spanish", Value = "es-ES" },
         new  CultureData() { Text = "Bulgarian", Value = "bg-BG" },
+        new  CultureData() { Text = "Dutch", Value = "nl-NL" },
     };
 
     public string SelectedCulture { get; set; }

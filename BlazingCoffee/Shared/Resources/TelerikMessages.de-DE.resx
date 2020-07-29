@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -698,5 +698,26 @@
   </data>
   <data name="Upload_FileStatusFailed" xml:space="preserve">
     <value>Datei konnte nicht hochgeladen werden.</value>
+  </data>
+  <data name="DropDownList_NoData" xml:space="preserve">
+    <value>Keine Daten gefunden</value>
+  </data>
+  <data name="Filter_All" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="Aggregate_Average" xml:space="preserve">
+    <value>Mittelwert</value>
+  </data>
+  <data name="Aggregate_Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Aggregate_Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="Aggregate_Sum" xml:space="preserve">
+    <value>Summe</value>
+  </data>
+  <data name="Aggregate_Count" xml:space="preserve">
+    <value>Anzahl</value>
   </data>
 </root>

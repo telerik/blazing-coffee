@@ -138,4 +138,55 @@
   <data name="Index_EmployeesCard_Description" xml:space="preserve">
     <value>Verwalten Sie Mitarbeiter und Teams.</value>
   </data>
+  <data name="Toggle_Id" xml:space="preserve">
+    <value>Toggle ID</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Produkt</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Gruppe</value>
+  </data>
+  <data name="Nutrition Info." xml:space="preserve">
+    <value>Ernährungs-Info</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>AnschWert</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Nicht verfügbar</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Ansicht</value>
+  </data>
+  <data name="Product_Upload_SaveDialog" xml:space="preserve">
+    <value>Speichern und dann bearbeiten, um Nährwertinformationen hinzuzufügen.</value>
+  </data>
+  <data name="ManageProducts_AddProduct" xml:space="preserve">
+    <value>Produkt hinzufügen</value>
+  </data>
+  <data name="Documentation" xml:space="preserve">
+    <value>Dokumentation</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Privat:</value>
+  </data>
+  <data name="LanguageChooser_SelectLanguage" xml:space="preserve">
+    <value>Sprache auswählen</value>
+  </data>
+  <data name="SelectTheme" xml:space="preserve">
+    <value>Design auswählen</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>Weitere Informationen ...</value>
+  </data>
 </root>

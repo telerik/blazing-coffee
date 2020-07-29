@@ -138,4 +138,55 @@
   <data name="ToolTip_LoginRequired" xml:space="preserve">
     <value>Изисква се вход</value>
   </data>
+  <data name="Toggle_Id" xml:space="preserve">
+    <value>Отворете / затворете ID</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>ИД</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Група</value>
+  </data>
+  <data name="Nutrition Info." xml:space="preserve">
+    <value>Информация за храненето</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>стойност</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Недостъпна</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Изглед</value>
+  </data>
+  <data name="Product_Upload_SaveDialog" xml:space="preserve">
+    <value>Запазете, след това редактирайте, за да добавите информация за храненето.</value>
+  </data>
+  <data name="ManageProducts_AddProduct" xml:space="preserve">
+    <value>Добавяне на продукт</value>
+  </data>
+  <data name="Documentation" xml:space="preserve">
+    <value>Документация</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Поддръжка</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="LanguageChooser_SelectLanguage" xml:space="preserve">
+    <value>Избор на език</value>
+  </data>
+  <data name="SelectTheme" xml:space="preserve">
+    <value>Избор на тема</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>Още информация...</value>
+  </data>
 </root>

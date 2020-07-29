@@ -138,4 +138,55 @@
   <data name="ToolTip_LoginRequired" xml:space="preserve">
     <value>Se requiere iniciar sesión</value>
   </data>
+  <data name="Toggle_Id" xml:space="preserve">
+    <value>Cambiar ID.</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="Nutrition Info." xml:space="preserve">
+    <value>Nutrición</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Costo</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>No está disponible</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Ver</value>
+  </data>
+  <data name="ManageProducts_AddProduct" xml:space="preserve">
+    <value>Agregar producto</value>
+  </data>
+  <data name="Product_Upload_SaveDialog" xml:space="preserve">
+    <value>¡Guarde, luego edite para agregar información nutricional!</value>
+  </data>
+  <data name="Documentation" xml:space="preserve">
+    <value>Documentación</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>soporte</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="LanguageChooser_SelectLanguage" xml:space="preserve">
+    <value>Seleccionar idioma</value>
+  </data>
+  <data name="SelectTheme" xml:space="preserve">
+    <value>Seleccionar tema</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>Más información ...</value>
+  </data>
 </root>

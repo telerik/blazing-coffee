@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -701,5 +701,29 @@
   </data>
   <data name="Upload_FileStatusFailed" xml:space="preserve">
     <value>El archivo no se pudo cargar.</value>
+  </data>
+  <data name="DropDownList_NoData" xml:space="preserve">
+    <value>Datos no encontrados</value>
+  </data>
+  <data name="Filter_All" xml:space="preserve">
+    <value>Todo</value>
+  </data>
+  <data name="Aggregate_Average" xml:space="preserve">
+    <value>Promedio</value>
+  </data>
+  <data name="Aggregate_Max" xml:space="preserve">
+    <value>Máx</value>
+  </data>
+  <data name="Aggregate_Min" xml:space="preserve">
+    <value>MIN</value>
+  </data>
+  <data name="Aggregate_Sum" xml:space="preserve">
+    <value>Suma</value>
+  </data>
+  <data name="Aggregate_Count" xml:space="preserve">
+    <value>Recuento</value>
+  </data>
+  <data name="Grid_NoRecords" xml:space="preserve">
+    <value>No hay registros disponibles</value>
   </data>
 </root>
