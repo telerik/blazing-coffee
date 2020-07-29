@@ -1,4 +1,6 @@
-﻿<div class="k-drawer-items">
+﻿@inject ITelerikStringLocalizer L
+
+<div class="k-drawer-items">
     <header>
         <LoginDisplay />
     </header>
@@ -11,7 +13,7 @@
         }
     </ul>
     <footer>
-        <h3 class="title">More Info</h3>
+        <h3 class="title">@L["Nav_MoreInfo"]</h3>
         <ul role="menubar" aria-orientation="vertical">
             <li class="k-drawer-item k-drawer-separator"></li>
             @foreach (DrawerItem item in Data.Where(item => item.Group == "ext"))

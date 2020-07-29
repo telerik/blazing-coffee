@@ -61,6 +61,24 @@ namespace BlazingCoffee.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sales and Revenue Total.
+        /// </summary>
+        public static string ChartTitle_SalesAndRevenueTotal {
+            get {
+                return ResourceManager.GetString("ChartTitle_SalesAndRevenueTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Sales.
+        /// </summary>
+        public static string ChartValueAxisTitle_TotalSales {
+            get {
+                return ResourceManager.GetString("ChartValueAxisTitle_TotalSales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cost.
         /// </summary>
         public static string Cost {
@@ -241,6 +259,15 @@ namespace BlazingCoffee.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to More Info.
+        /// </summary>
+        public static string Nav_MoreInfo {
+            get {
+                return ResourceManager.GetString("Nav_MoreInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not Available.
         /// </summary>
         public static string NotAvailable {
@@ -277,11 +304,83 @@ namespace BlazingCoffee.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reporting.
+        /// </summary>
+        public static string Reporting {
+            get {
+                return ResourceManager.GetString("Reporting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sales.
         /// </summary>
         public static string Sales {
             get {
                 return ResourceManager.GetString("Sales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string Sales_Grid_Title_Amount {
+            get {
+                return ResourceManager.GetString("Sales_Grid_Title_Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string Sales_Grid_Title_Country {
+            get {
+                return ResourceManager.GetString("Sales_Grid_Title_Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Region.
+        /// </summary>
+        public static string Sales_Grid_Title_Region {
+            get {
+                return ResourceManager.GetString("Sales_Grid_Title_Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string Sales_Grid_Title_Sku {
+            get {
+                return ResourceManager.GetString("Sales_Grid_Title_Sku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Store.
+        /// </summary>
+        public static string Sales_Grid_Title_StoreId {
+            get {
+                return ResourceManager.GetString("Sales_Grid_Title_StoreId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction Date.
+        /// </summary>
+        public static string Sales_Grid_Title_TransactionDate {
+            get {
+                return ResourceManager.GetString("Sales_Grid_Title_TransactionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report Range:.
+        /// </summary>
+        public static string Sales_Grid_Toolbar_ReportRange {
+            get {
+                return ResourceManager.GetString("Sales_Grid_Toolbar_ReportRange", resourceCulture);
             }
         }
         

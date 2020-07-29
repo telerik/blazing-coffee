@@ -210,4 +210,37 @@
   <data name="Employee_Grid_Title_Budget" xml:space="preserve">
     <value>Presupuesto</value>
   </data>
+  <data name="Sales_Grid_Title_Sku" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="Sales_Grid_Title_Amount" xml:space="preserve">
+    <value>Importe</value>
+  </data>
+  <data name="Sales_Grid_Title_Country" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Sales_Grid_Title_StoreId" xml:space="preserve">
+    <value>Tienda</value>
+  </data>
+  <data name="Sales_Grid_Title_TransactionDate" xml:space="preserve">
+    <value>Fecha de la transacción</value>
+  </data>
+  <data name="Sales_Grid_Title_Region" xml:space="preserve">
+    <value>Región</value>
+  </data>
+  <data name="Sales_Grid_Toolbar_ReportRange" xml:space="preserve">
+    <value>Rango</value>
+  </data>
+  <data name="Reporting" xml:space="preserve">
+    <value>Informes</value>
+  </data>
+  <data name="ChartTitle_SalesAndRevenueTotal" xml:space="preserve">
+    <value>Ventas e ingresos totales!</value>
+  </data>
+  <data name="Nav_MoreInfo" xml:space="preserve">
+    <value>Más información ...</value>
+  </data>
+  <data name="ChartValueAxisTitle_TotalSales" xml:space="preserve">
+    <value>Total de ventas</value>
+  </data>
 </root>

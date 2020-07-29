@@ -190,4 +190,37 @@
   <data name="Employee_Grid_Title_Budget" xml:space="preserve">
     <value>Budget</value>
   </data>
+  <data name="Sales_Grid_Title_Sku" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Sales_Grid_Title_Amount" xml:space="preserve">
+    <value>Bedrag</value>
+  </data>
+  <data name="Sales_Grid_Title_Country" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="Sales_Grid_Title_StoreId" xml:space="preserve">
+    <value>Store</value>
+  </data>
+  <data name="Sales_Grid_Title_TransactionDate" xml:space="preserve">
+    <value>Transactiedatum</value>
+  </data>
+  <data name="Sales_Grid_Title_Region" xml:space="preserve">
+    <value>Regio</value>
+  </data>
+  <data name="Sales_Grid_Toolbar_ReportRange" xml:space="preserve">
+    <value>Rapportbereik :!</value>
+  </data>
+  <data name="Reporting" xml:space="preserve">
+    <value>Rapportage</value>
+  </data>
+  <data name="ChartTitle_SalesAndRevenueTotal" xml:space="preserve">
+    <value>Totaal omzet en omzet!</value>
+  </data>
+  <data name="Nav_MoreInfo" xml:space="preserve">
+    <value>Meer informatie ...</value>
+  </data>
+  <data name="ChartValueAxisTitle_TotalSales" xml:space="preserve">
+    <value>Totale verkoop</value>
+  </data>
 </root>

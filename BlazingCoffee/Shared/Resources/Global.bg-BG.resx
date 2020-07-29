@@ -139,7 +139,7 @@
     <value>Изисква се вход</value>
   </data>
   <data name="Toggle_Id" xml:space="preserve">
-    <value>Отворете / затворете ID</value>
+    <value>Отворете / затворете ИД</value>
   </data>
   <data name="Product" xml:space="preserve">
     <value>Продукт</value>
@@ -209,5 +209,38 @@
   </data>
   <data name="Employee_Grid_Title_Budget" xml:space="preserve">
     <value>Бюджет</value>
+  </data>
+  <data name="Sales_Grid_Title_Sku" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="Sales_Grid_Title_Amount" xml:space="preserve">
+    <value>Сума</value>
+  </data>
+  <data name="Sales_Grid_Title_Country" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="Sales_Grid_Title_StoreId" xml:space="preserve">
+    <value>Магазин</value>
+  </data>
+  <data name="Sales_Grid_Title_TransactionDate" xml:space="preserve">
+    <value>Дата на транзакция</value>
+  </data>
+  <data name="Sales_Grid_Title_Region" xml:space="preserve">
+    <value>Регион</value>
+  </data>
+  <data name="Sales_Grid_Toolbar_ReportRange" xml:space="preserve">
+    <value>Обхват на отчетите:!</value>
+  </data>
+  <data name="Reporting" xml:space="preserve">
+    <value>Отчитане</value>
+  </data>
+  <data name="ChartTitle_SalesAndRevenueTotal" xml:space="preserve">
+    <value>Общо продажби и приходи!</value>
+  </data>
+  <data name="Nav_MoreInfo" xml:space="preserve">
+    <value>Още информация...</value>
+  </data>
+  <data name="ChartValueAxisTitle_TotalSales" xml:space="preserve">
+    <value>Продажби общо</value>
   </data>
 </root>

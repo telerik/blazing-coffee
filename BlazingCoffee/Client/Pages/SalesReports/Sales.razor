@@ -2,15 +2,16 @@
 @using System.Globalization
 @attribute [Authorize]
 @inject HttpClient Http
+@inject ITelerikStringLocalizer L
 <!-- Demo 1: Remote Sort, Filter, and Paging -->
 <SalesByDateChart Data="chartData"></SalesByDateChart>
-<CardContainer Title="Sales">
+<CardContainer Title="@L["Sales"]">
     <TelerikGrid @ref="Grid" Height="500px" FilterMode="@GridFilterMode.FilterMenu"
                  Sortable="true" Pageable="true" PageSize="10"
                  OnStateInit="@((GridStateEventArgs<Sale> args) => OnStateInit(args))"
                  Data=@Model.CurrentPageData TotalCount=@Model.TotalItemCount OnRead=@ReadItems>
         <GridToolBar>
-            <label>Report Range:</label>
+            <label>@L["Sales_Grid_Toolbar_ReportRange"]</label>
             <TelerikDateRangePicker StartValue="@StartValue" EndValue="@EndValue"
                                     BottomView="CalendarView.Year"
                                     StartValueChanged="@((DateTime? sV) => StartValueChangedHandler(sV))"
@@ -18,7 +19,7 @@
             </TelerikDateRangePicker>
         </GridToolBar>
         <GridColumns>
-            <GridColumn Field="@nameof(Sale.Amount)">
+            <GridColumn Field="@nameof(Sale.Amount)" Title="@L["Sales_Grid_Title_Amount"]">
                 <Template>
                     @{
                         var prod = (Sale)context;
@@ -26,11 +27,11 @@
                     }
                 </Template>
             </GridColumn>
-            <GridColumn Field="@nameof(Sale.Region)"></GridColumn>
-            <GridColumn Field="@nameof(Sale.Country)"></GridColumn>
-            <GridColumn Field="@nameof(Sale.Sku)"></GridColumn>
-            <GridColumn Field="@nameof(Sale.StoreId)"></GridColumn>
-            <GridColumn Field="@nameof(Sale.TransactionDate)" Filterable="false">
+            <GridColumn Field="@nameof(Sale.Region)" Title="@L[""]"></GridColumn>
+            <GridColumn Field="@nameof(Sale.Country)" Title="@L["Sales_Grid_Title_Country"]"></GridColumn>
+            <GridColumn Field="@nameof(Sale.Sku)" Title="@L["Sales_Grid_Title_Sku"]"></GridColumn>
+            <GridColumn Field="@nameof(Sale.StoreId)" Title="@L["Sales_Grid_Title_StoreId"]"></GridColumn>
+            <GridColumn Field="@nameof(Sale.TransactionDate)" Title="@L["Sales_Grid_Title_TransactionDate"]" Filterable="false">
                 <Template>
                     @{
                         var prod = (Sale)context;
@@ -88,7 +89,7 @@
         //not updating the model will effectively cancel the event
         StartValue = currStart;
 
-        Console.WriteLine($"start changed to: {currStart}");
+        //Console.WriteLine($"start changed to: {currStart}");
     }
 
     async Task EndValueChangedHandler(DateTime? currEnd)
