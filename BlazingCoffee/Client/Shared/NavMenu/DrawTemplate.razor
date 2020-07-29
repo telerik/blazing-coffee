@@ -1,28 +1,13 @@
-﻿@inject NavigationManager navigationManger
-@using BlazingCoffee.Client.Shared.NavMenu
-
-<div class="k-drawer-items">
+﻿<div class="k-drawer-items">
     <header>
         <LoginDisplay />
     </header>
     <ul role="menubar" aria-orientation="vertical">
         <li class="k-drawer-item k-drawer-separator"></li>
-        @foreach (DrawerItem item in Data.Where(item => item.Group == "app"))
+        <DrawerNavLink href="@Home.Url" Text="@Home.Text" Icon="@Home.Icon" Match="NavLinkMatch.All" />
+        @foreach (var item in Data.Where(item => item.Group == "app"))
         {
-            if (item == SelectedItem)
-            {
-                <li class="k-drawer-item k-state-selected" data-index="0" tabindex="0" role="menuitem" aria-label="@item.Text">
-                    <TelerikIcon Icon="@item.Icon"></TelerikIcon>
-                    <span class="k-item-text">@item.Text</span>
-                </li>
-            }
-            else
-            {
-                <li class="k-drawer-item" data-index="1" tabindex="-1" role="menuitem" aria-label="@item.Text" @onclick="@(()=> ItemSelected(item))">
-                    <TelerikIcon Icon="@item.Icon"></TelerikIcon>
-                    <span class="k-item-text">@item.Text</span>
-                </li>
-            }
+            <DrawerNavLink href="@item.Url" Text="@item.Text" Icon="@item.Icon" />
         }
     </ul>
     <footer>
@@ -31,10 +16,7 @@
             <li class="k-drawer-item k-drawer-separator"></li>
             @foreach (DrawerItem item in Data.Where(item => item.Group == "ext"))
             {
-                <li class="k-drawer-item" data-index="1" tabindex="-1" role="menuitem" aria-label="@item.Text" @onclick="@(()=>navigationManger.NavigateTo(item.Url))">
-                    <TelerikIcon Icon="@item.Icon"></TelerikIcon>
-                    <span class="k-item-text">@item.Text</span>
-                </li>
+                <DrawerNavLink href="@item.Url" Text="@item.Text" Icon="@item.Icon" />
             }
         </ul>
     </footer>
@@ -44,16 +26,6 @@
 
     [Parameter] public IEnumerable<DrawerItem> Data { get; set; }
 
-    DrawerItem SelectedItem;
-    protected override void OnInitialized()
-    {
-        SelectedItem = Data.First();
-    }
-
-    void ItemSelected(DrawerItem item)
-    {
-        SelectedItem = item;
-        navigationManger.NavigateTo(item.Url);
-    }
+    DrawerItem Home => Data.First();
 
 }
