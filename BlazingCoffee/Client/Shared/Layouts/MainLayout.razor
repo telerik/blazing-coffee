@@ -42,7 +42,7 @@
                         @L["SelectTheme"]
                     </label>
                     <div class="k-form-field-wrap">
-                        <TelerikDropDownList Id="theme" Data="Themes" TValue="string" TItem="string" @bind-Value="SelectedTheme" />
+                        <ThemeChooser></ThemeChooser>
                     </div>
                 </div>
                 <div class="k-form-field">
@@ -73,9 +73,6 @@
             new DrawerItem{ Text = "Telerik", Icon = IconName.HyperlinkGlobe, Url="https://telerik.com", Group = "ext"},
             new DrawerItem{ Text = L["Documentation"], Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
             new DrawerItem{ Text = L["Support"], Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
-                                                                                                            };
-
-    string SelectedTheme = "auto";
-    IEnumerable<string> Themes => new List<string> { "auto" }; // TODO add manual settings, "light", "dark" };
+                                                                                                                            };
 
 }
