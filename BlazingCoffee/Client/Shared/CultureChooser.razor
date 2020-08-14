@@ -1,12 +1,12 @@
 @using System.Globalization
 
-@inject IJSRuntime js
 @inject NavigationManager NavigationManager
+@inject ILocalStorageService LocalStorage
 
 <div style="margin-bottom: 20px;">
     <TelerikDropDownList Data="@Cultures"
                          Value="@SelectedCulture"
-                         ValueChanged="@((string value) => { OnValueChanged(value); })"
+                         ValueChanged="@((string value) => OnValueChanged(value) )"
                          TextField="@nameof(CultureData.Text)"
                          ValueField="@nameof(CultureData.Value)">
     </TelerikDropDownList>
@@ -29,18 +29,18 @@
 
     public string SelectedCulture { get; set; }
 
-    public void OnValueChanged(string eventArgs)
+    public async Task OnValueChanged(string eventArgs)
     {
         SelectedCulture = eventArgs;
 
-        SetCulture(eventArgs);
+        await SetCulture(eventArgs);
     }
 
-    public void SetCulture(string culture)
+    public async Task SetCulture(string culture)
     {
         if (CultureInfo.CurrentCulture.Name != culture)
         {
-            js.InvokeVoidAsync("blazorCulture.set", culture);
+            await LocalStorage.SetItemAsync("BlazorCulture", culture);
 
             NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
         }
@@ -48,7 +48,7 @@
 
     public async Task GetCulture()
     {
-        var value = await js.InvokeAsync<string>("blazorCulture.get");
+        var value = await LocalStorage.GetItemAsStringAsync("BlazorCulture");
         if (string.IsNullOrEmpty(value))
         {
             value = "en-US";

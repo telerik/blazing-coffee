@@ -3,10 +3,13 @@
 
 @inherits LayoutComponentBase
 @inject ITelerikStringLocalizer L
-
+@inject ILocalStorageService LocalStorage
 
 <TelerikRootComponent>
-    <TelerikDrawer @bind-Expanded="@Expanded" Width="280px" Data="Data" Mode="DrawerMode.Push" Position="DrawerPosition.Left" MiniMode="true">
+    <TelerikDrawer @ref="MenuDrawer"
+                   Expanded="@Expanded" 
+                   ExpandedChanged="((bool newValue) => ExpandedChangedHandler(newValue))" 
+                   Width="280px" Data="Data" Mode="DrawerMode.Push" Position="DrawerPosition.Left" MiniMode="true">
         <Template>
             <DrawTemplate Data="context"></DrawTemplate>
         </Template>
@@ -14,7 +17,7 @@
             <header class="header">
                 <div class="nav-container">
                     <div class="menu-button">
-                        <TelerikButton Icon="@IconName.Menu" OnClick="@(() => Expanded = !Expanded)" />
+                        <TelerikButton Icon="@IconName.Menu" OnClick="ToggleMenuDrawer" />
                     </div>
 
                     <div class="title">
@@ -42,7 +45,7 @@
                         @L["SelectTheme"]
                     </label>
                     <div class="k-form-field-wrap">
-                        <TelerikDropDownList Id="theme" Data="Themes" TValue="string" TItem="string" @bind-Value="SelectedTheme" />
+                        <ThemeChooser></ThemeChooser>
                     </div>
                 </div>
                 <div class="k-form-field">
@@ -59,7 +62,10 @@
 </TelerikRootComponent>
 
 @code {
-    bool Expanded { get; set; } = true;
+
+    TelerikDrawer<DrawerItem> MenuDrawer { get; set; }
+
+    bool Expanded { get; set; }
     bool SettingsExpanded { get; set; }
 
     IEnumerable<DrawerItem> Data =>
@@ -73,9 +79,38 @@
             new DrawerItem{ Text = "Telerik", Icon = IconName.HyperlinkGlobe, Url="https://telerik.com", Group = "ext"},
             new DrawerItem{ Text = L["Documentation"], Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
             new DrawerItem{ Text = L["Support"], Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
-                                                                                                            };
+                                                                                                                                            };
 
-    string SelectedTheme = "auto";
-    IEnumerable<string> Themes => new List<string> { "auto" }; // TODO add manual settings, "light", "dark" };
+    async Task ToggleMenuDrawer()
+    {
+        if (Expanded)
+        {
+           await MenuDrawer.CollapseAsync();
+        }
+        else
+        {
+           await MenuDrawer.ExpandAsync();
+        }
+    }
+
+    async Task ExpandedChangedHandler(bool value)
+    {
+        Expanded = value;
+
+        await LocalStorage.SetItemAsync("drawerState", value);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var hasKey = await LocalStorage.ContainKeyAsync("drawerState");
+        if (hasKey)
+        {
+            Expanded = await LocalStorage.GetItemAsync<bool>("drawerState");
+        }
+        else
+        {
+            Expanded = true;
+        }
+    }
 
 }
