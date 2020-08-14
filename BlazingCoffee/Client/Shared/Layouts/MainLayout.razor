@@ -97,7 +97,7 @@
     {
         Expanded = value;
 
-        await LocalStorage.SetItemAsync<bool>("drawerState", value);
+        await LocalStorage.SetItemAsync("drawerState", value);
     }
 
     protected override async Task OnInitializedAsync()
