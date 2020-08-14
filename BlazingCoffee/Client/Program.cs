@@ -4,7 +4,6 @@ using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.JSInterop;
 using System;
 using System.Globalization;
 using System.Net.Http;
@@ -23,8 +22,8 @@ namespace BlazingCoffee.Client
             ConfigureServices(builder);
 
             var host = builder.Build();
-            var jsInterop = host.Services.GetRequiredService<IJSRuntime>();
-            var result = await jsInterop.InvokeAsync<string>("blazorCulture.get");
+            var localStorage = host.Services.GetRequiredService<ILocalStorageService>();
+            var result = await localStorage.GetItemAsStringAsync("BlazorCulture");
             if (result != null)
             {
                 var culture = new CultureInfo(result);
