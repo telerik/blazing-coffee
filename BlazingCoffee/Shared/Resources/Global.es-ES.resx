@@ -243,4 +243,7 @@
   <data name="ChartValueAxisTitle_TotalSales" xml:space="preserve">
     <value>Total de ventas</value>
   </data>
+  <data name="MainLayout_Documentation" xml:space="preserve">
+    <value>Documentación</value>
+  </data>
 </root>

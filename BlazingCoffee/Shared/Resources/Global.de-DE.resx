@@ -243,4 +243,7 @@
   <data name="ChartValueAxisTitle_TotalSales" xml:space="preserve">
     <value>Gesamtumsatz</value>
   </data>
+  <data name="MainLayout_Documentation" xml:space="preserve">
+    <value>Dokumentation</value>
+  </data>
 </root>

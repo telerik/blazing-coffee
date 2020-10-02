@@ -2,11 +2,11 @@
 
 namespace BlazingCoffee.Services
 {
-    public class PublicClient
+    public class PublicHttp
     {
         public HttpClient Client { get; private set; }
 
-        public PublicClient(HttpClient httpClient)
+        public PublicHttp(HttpClient httpClient)
         {
             Client = httpClient;
         }

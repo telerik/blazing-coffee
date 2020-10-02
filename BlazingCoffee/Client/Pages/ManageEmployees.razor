@@ -1,11 +1,17 @@
+@inherits CoffeeComponentBase
 @attribute [Authorize]
 @page "/manage-employees"
 @inject HttpClient Http
 @using Telerik.Blazor.Services 
-@inject ITelerikStringLocalizer L
 
 <CardContainer Title="@L["Employees"]">
-    <TelerikGrid Data="employees" Pageable="true" Sortable="true" FilterMode="GridFilterMode.FilterMenu" Resizable="true">
+    <TelerikGrid Data="employees" 
+                 Pageable="true" 
+                 Sortable="true" 
+                 FilterMode="GridFilterMode.FilterMenu" 
+                 Resizable="true"
+                 ShowColumnMenu="true"
+                 >
         <GridColumns>
             <GridColumn Field="@nameof(Employee.ImgId)" Title="" Sortable="false" Width="100px" Filterable="false">
                 <Template>

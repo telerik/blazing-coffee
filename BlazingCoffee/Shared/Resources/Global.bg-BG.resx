@@ -243,4 +243,7 @@
   <data name="ChartValueAxisTitle_TotalSales" xml:space="preserve">
     <value>Продажби общо</value>
   </data>
+  <data name="MainLayout_Documentation" xml:space="preserve">
+    <value>Документация</value>
+  </data>
 </root>

@@ -178,6 +178,78 @@ namespace BlazingCoffee.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apply.
+        /// </summary>
+        public static string ColumnMenu_Apply {
+            get {
+                return ResourceManager.GetString("ColumnMenu_Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Column menu.
+        /// </summary>
+        public static string ColumnMenu_ColumnMenu {
+            get {
+                return ResourceManager.GetString("ColumnMenu_ColumnMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Columns.
+        /// </summary>
+        public static string ColumnMenu_Columns {
+            get {
+                return ResourceManager.GetString("ColumnMenu_Columns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lock.
+        /// </summary>
+        public static string ColumnMenu_Lock {
+            get {
+                return ResourceManager.GetString("ColumnMenu_Lock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        public static string ColumnMenu_Reset {
+            get {
+                return ResourceManager.GetString("ColumnMenu_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort Ascending.
+        /// </summary>
+        public static string ColumnMenu_SortAscending {
+            get {
+                return ResourceManager.GetString("ColumnMenu_SortAscending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort Descending.
+        /// </summary>
+        public static string ColumnMenu_SortDescending {
+            get {
+                return ResourceManager.GetString("ColumnMenu_SortDescending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock.
+        /// </summary>
+        public static string ColumnMenu_Unlock {
+            get {
+                return ResourceManager.GetString("ColumnMenu_Unlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear.
         /// </summary>
         public static string ComboBox_Clear {
@@ -273,6 +345,411 @@ namespace BlazingCoffee.Shared.Resources {
         public static string DropDownList_NoData {
             get {
                 return ResourceManager.GetString("DropDownList_NoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add column on the left.
+        /// </summary>
+        public static string Editor_AddColumnLeft {
+            get {
+                return ResourceManager.GetString("Editor_AddColumnLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add column on the right.
+        /// </summary>
+        public static string Editor_AddColumnRight {
+            get {
+                return ResourceManager.GetString("Editor_AddColumnRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add row above.
+        /// </summary>
+        public static string Editor_AddRowAbove {
+            get {
+                return ResourceManager.GetString("Editor_AddRowAbove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add row below.
+        /// </summary>
+        public static string Editor_AddRowBelow {
+            get {
+                return ResourceManager.GetString("Editor_AddRowBelow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center text.
+        /// </summary>
+        public static string Editor_AlignCenter {
+            get {
+                return ResourceManager.GetString("Editor_AlignCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Justify.
+        /// </summary>
+        public static string Editor_AlignJustify {
+            get {
+                return ResourceManager.GetString("Editor_AlignJustify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Align text left.
+        /// </summary>
+        public static string Editor_AlignLeft {
+            get {
+                return ResourceManager.GetString("Editor_AlignLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Align text right.
+        /// </summary>
+        public static string Editor_AlignRight {
+            get {
+                return ResourceManager.GetString("Editor_AlignRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background color.
+        /// </summary>
+        public static string Editor_BackColor {
+            get {
+                return ResourceManager.GetString("Editor_BackColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bold.
+        /// </summary>
+        public static string Editor_Bold {
+            get {
+                return ResourceManager.GetString("Editor_Bold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert hyperlink.
+        /// </summary>
+        public static string Editor_CreateLink {
+            get {
+                return ResourceManager.GetString("Editor_CreateLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create table.
+        /// </summary>
+        public static string Editor_CreateTable {
+            get {
+                return ResourceManager.GetString("Editor_CreateTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete column.
+        /// </summary>
+        public static string Editor_DeleteColumn {
+            get {
+                return ResourceManager.GetString("Editor_DeleteColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete row.
+        /// </summary>
+        public static string Editor_DeleteRow {
+            get {
+                return ResourceManager.GetString("Editor_DeleteRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Editor_DialogCancel {
+            get {
+                return ResourceManager.GetString("Editor_DialogCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert.
+        /// </summary>
+        public static string Editor_DialogInsert {
+            get {
+                return ResourceManager.GetString("Editor_DialogInsert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string Editor_DialogUpdate {
+            get {
+                return ResourceManager.GetString("Editor_DialogUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Name.
+        /// </summary>
+        public static string Editor_FontFamily {
+            get {
+                return ResourceManager.GetString("Editor_FontFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Size.
+        /// </summary>
+        public static string Editor_FontSize {
+            get {
+                return ResourceManager.GetString("Editor_FontSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color.
+        /// </summary>
+        public static string Editor_ForeColor {
+            get {
+                return ResourceManager.GetString("Editor_ForeColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Format.
+        /// </summary>
+        public static string Editor_Format {
+            get {
+                return ResourceManager.GetString("Editor_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alternate text:.
+        /// </summary>
+        public static string Editor_ImageAltText {
+            get {
+                return ResourceManager.GetString("Editor_ImageAltText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height:.
+        /// </summary>
+        public static string Editor_ImageHeight {
+            get {
+                return ResourceManager.GetString("Editor_ImageHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web address:.
+        /// </summary>
+        public static string Editor_ImageWebAddress {
+            get {
+                return ResourceManager.GetString("Editor_ImageWebAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width:.
+        /// </summary>
+        public static string Editor_ImageWidth {
+            get {
+                return ResourceManager.GetString("Editor_ImageWidth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indent.
+        /// </summary>
+        public static string Editor_Indent {
+            get {
+                return ResourceManager.GetString("Editor_Indent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert file.
+        /// </summary>
+        public static string Editor_InsertFile {
+            get {
+                return ResourceManager.GetString("Editor_InsertFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert HTML.
+        /// </summary>
+        public static string Editor_InsertHtml {
+            get {
+                return ResourceManager.GetString("Editor_InsertHtml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert image.
+        /// </summary>
+        public static string Editor_InsertImage {
+            get {
+                return ResourceManager.GetString("Editor_InsertImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert ordered list.
+        /// </summary>
+        public static string Editor_InsertOrderedList {
+            get {
+                return ResourceManager.GetString("Editor_InsertOrderedList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert unordered list.
+        /// </summary>
+        public static string Editor_InsertUnorderedList {
+            get {
+                return ResourceManager.GetString("Editor_InsertUnorderedList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Italic.
+        /// </summary>
+        public static string Editor_Italic {
+            get {
+                return ResourceManager.GetString("Editor_Italic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open in new window.
+        /// </summary>
+        public static string Editor_LinkOpenNewWindow {
+            get {
+                return ResourceManager.GetString("Editor_LinkOpenNewWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text.
+        /// </summary>
+        public static string Editor_LinkText {
+            get {
+                return ResourceManager.GetString("Editor_LinkText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title:.
+        /// </summary>
+        public static string Editor_LinkTitle {
+            get {
+                return ResourceManager.GetString("Editor_LinkTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web address:.
+        /// </summary>
+        public static string Editor_LinkWebAddress {
+            get {
+                return ResourceManager.GetString("Editor_LinkWebAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outdent.
+        /// </summary>
+        public static string Editor_Outdent {
+            get {
+                return ResourceManager.GetString("Editor_Outdent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redo.
+        /// </summary>
+        public static string Editor_Redo {
+            get {
+                return ResourceManager.GetString("Editor_Redo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strikethrough.
+        /// </summary>
+        public static string Editor_Strikethrough {
+            get {
+                return ResourceManager.GetString("Editor_Strikethrough", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscript.
+        /// </summary>
+        public static string Editor_Subscript {
+            get {
+                return ResourceManager.GetString("Editor_Subscript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Superscript.
+        /// </summary>
+        public static string Editor_Superscript {
+            get {
+                return ResourceManager.GetString("Editor_Superscript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Underline.
+        /// </summary>
+        public static string Editor_Underline {
+            get {
+                return ResourceManager.GetString("Editor_Underline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Undo.
+        /// </summary>
+        public static string Editor_Undo {
+            get {
+                return ResourceManager.GetString("Editor_Undo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove hyperlink.
+        /// </summary>
+        public static string Editor_Unlink {
+            get {
+                return ResourceManager.GetString("Editor_Unlink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View HTML.
+        /// </summary>
+        public static string Editor_ViewHtml {
+            get {
+                return ResourceManager.GetString("Editor_ViewHtml", resourceCulture);
             }
         }
         
@@ -696,6 +1173,15 @@ namespace BlazingCoffee.Shared.Resources {
         public static string Grid_NoRecords {
             get {
                 return ResourceManager.GetString("Grid_NoRecords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search....
+        /// </summary>
+        public static string Grid_Search {
+            get {
+                return ResourceManager.GetString("Grid_Search", resourceCulture);
             }
         }
         
@@ -1447,6 +1933,24 @@ namespace BlazingCoffee.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Off.
+        /// </summary>
+        public static string Switch_OffLabel {
+            get {
+                return ResourceManager.GetString("Switch_OffLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On.
+        /// </summary>
+        public static string Switch_OnLabel {
+            get {
+                return ResourceManager.GetString("Switch_OnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string TimePicker_Cancel {
@@ -1578,6 +2082,60 @@ namespace BlazingCoffee.Shared.Resources {
         public static string TimePicker_Zone {
             get {
                 return ResourceManager.GetString("TimePicker_Zone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string TreeList_Cancel {
+            get {
+                return ResourceManager.GetString("TreeList_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new record.
+        /// </summary>
+        public static string TreeList_Create {
+            get {
+                return ResourceManager.GetString("TreeList_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string TreeList_Delete {
+            get {
+                return ResourceManager.GetString("TreeList_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string TreeList_Edit {
+            get {
+                return ResourceManager.GetString("TreeList_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search....
+        /// </summary>
+        public static string TreeList_Search {
+            get {
+                return ResourceManager.GetString("TreeList_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string TreeList_Update {
+            get {
+                return ResourceManager.GetString("TreeList_Update", resourceCulture);
             }
         }
         

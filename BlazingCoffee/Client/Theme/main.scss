@@ -7,8 +7,13 @@
 @import "./drawer";
 @import "./card-container";
 @import "./common";
+@import "./docs";
 
 // TODO: Refactor to partial
+.k-tilelayout {
+    background-color: transparent;
+}
+
 .image-cell {
     display: flex;
     align-items: center;
@@ -22,6 +27,10 @@
     flex-wrap: wrap;
     justify-content: right;
     margin: 30px;
+}
+
+.card-description {
+    min-height:4em;
 }
 
 .card-menu > .k-card {

@@ -232,6 +232,15 @@ namespace BlazingCoffee.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Documentation.
+        /// </summary>
+        public static string MainLayout_Documentation {
+            get {
+                return ResourceManager.GetString("MainLayout_Documentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage Products.
         /// </summary>
         public static string ManageProducts {

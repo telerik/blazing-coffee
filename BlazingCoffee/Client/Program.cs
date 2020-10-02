@@ -1,3 +1,4 @@
+using BlazingCoffee.Client.Shared.Layouts;
 using BlazingCoffee.Services;
 using BlazingCoffee.Shared.Localization;
 using Blazored.LocalStorage;
@@ -39,9 +40,10 @@ namespace BlazingCoffee.Client
             builder.Services.AddTelerikBlazor();
 
             builder.Services.AddBlazoredLocalStorage();
-            builder.Services.AddHttpClient<PublicClient>(client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
+            builder.Services.AddHttpClient<PublicHttp>(client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
             builder.Services.AddHttpClient("BlazingCoffee.ServerAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
                             .AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
+            builder.Services.AddScoped<MainLayoutState>();
 
             // Supply HttpClient instances that include access tokens when making requests to the server project
             builder.Services.AddTransient(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("BlazingCoffee.ServerAPI"));

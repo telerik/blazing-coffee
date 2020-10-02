@@ -243,4 +243,7 @@
   <data name="Nav_MoreInfo" xml:space="preserve">
     <value>More Info</value>
   </data>
+  <data name="MainLayout_Documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
 </root>

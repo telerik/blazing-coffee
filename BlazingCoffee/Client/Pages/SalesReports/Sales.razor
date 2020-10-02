@@ -1,8 +1,8 @@
 ﻿@page "/sales"
+@inherits CoffeeComponentBase
 @using System.Globalization
 @attribute [Authorize]
 @inject HttpClient Http
-@inject ITelerikStringLocalizer L
 @inject ILocalStorageService LocalStorage
 
 <SalesByDateChart Data="chartData"></SalesByDateChart>

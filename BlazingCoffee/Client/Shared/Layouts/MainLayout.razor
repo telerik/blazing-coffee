@@ -4,11 +4,13 @@
 @inherits LayoutComponentBase
 @inject ITelerikStringLocalizer L
 @inject ILocalStorageService LocalStorage
+@inject Services.PublicHttp Http
+@inject MainLayoutState Layout
 
 <TelerikRootComponent>
     <TelerikDrawer @ref="MenuDrawer"
-                   Expanded="@Expanded" 
-                   ExpandedChanged="((bool newValue) => ExpandedChangedHandler(newValue))" 
+                   Expanded="@Expanded"
+                   ExpandedChanged="((bool newValue) => ExpandedChangedHandler(newValue))"
                    Width="280px" Data="Data" Mode="DrawerMode.Push" Position="DrawerPosition.Left" MiniMode="true">
         <Template>
             <DrawTemplate Data="context"></DrawTemplate>
@@ -25,6 +27,7 @@
                     </div>
                     <div class="settings">
                         <TelerikButton Icon="@IconName.Gear" OnClick="@(() => SettingsExpanded = !SettingsExpanded)" />
+                        <TelerikButton Icon="@IconName.Question" OnClick="@(() => DocsExpanded = !DocsExpanded)" />
                     </div>
                 </div>
             </header>
@@ -59,6 +62,19 @@
             </div>
         </WindowContent>
     </TelerikWindow>
+    <TelerikWindow @bind-Visible="DocsExpanded" Modal="true" >
+        <WindowTitle>
+            @L["MainLayout_Documentation"]: @Layout.DocsPath
+        </WindowTitle>
+        <WindowActions>
+            <WindowAction Name="Close" />
+        </WindowActions>
+        <WindowContent>
+           <div class="docs-wrapper">
+               @((MarkupString)Docs)
+           </div>
+        </WindowContent>
+    </TelerikWindow>
 </TelerikRootComponent>
 
 @code {
@@ -67,6 +83,10 @@
 
     bool Expanded { get; set; }
     bool SettingsExpanded { get; set; }
+    bool DocsExpanded { get; set; }
+    string Docs { get; set; }
+
+    [CascadingParameter] public CoffeeComponentBase DocumentedComponent { get; set; }
 
     IEnumerable<DrawerItem> Data =>
     new List<DrawerItem>
@@ -79,17 +99,17 @@
             new DrawerItem{ Text = "Telerik", Icon = IconName.HyperlinkGlobe, Url="https://telerik.com", Group = "ext"},
             new DrawerItem{ Text = L["Documentation"], Icon = IconName.Html, Url="https://docs.telerik.com/blazor-ui/introduction", Group = "ext"},
             new DrawerItem{ Text = L["Support"], Icon = IconName.Question, Url="https://www.telerik.com/account/support-tickets", Group = "ext"}
-                                                                                                                                            };
+                                                                                                                                                            };
 
     async Task ToggleMenuDrawer()
     {
         if (Expanded)
         {
-           await MenuDrawer.CollapseAsync();
+            await MenuDrawer.CollapseAsync();
         }
         else
         {
-           await MenuDrawer.ExpandAsync();
+            await MenuDrawer.ExpandAsync();
         }
     }
 
@@ -111,6 +131,16 @@
         {
             Expanded = true;
         }
+
+        Layout.LayoutStateChange = async () =>
+        {
+            if (Layout.HasDocs)
+            {
+                var result = await Http.Client.GetStringAsync($"/docs/{Layout.DocsPath}.razor.md");
+                Docs = Markdig.Markdown.ToHtml(result);
+            }
+        };
+
     }
 
 }
