@@ -1,6 +1,6 @@
 ﻿# Demos you'll find here include:
 
-## Globalization and Localization with ITelerikStringLocalizer
+
 
 ## Component Authorization thorugh the `[Authorize]` attribute
 

@@ -24,7 +24,7 @@ If you are using a trial version of Telerik UI for Blazor.
     <PackageReference Include="Telerik.UI.for.Blazor.Trial" Version="2.x" />
 ```
 
-- In BlazingCoffee.Client/wwwroot, add `.Trial` to the script path.
+- In BlazingCoffee.Client/wwwroot, append `.trial` to `telerik.ui.for.blazor` in the script path.
 
 ```
     <script src="_content/telerik.ui.for.blazor/js/telerik-blazor.js"></script>
