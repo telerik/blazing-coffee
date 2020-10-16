@@ -1,0 +1,15 @@
+﻿@inject BlazingCoffee.Services.PublicHttp Http
+ 
+<img class="k-avatar-rounded" src="https://www.gravatar.com/avatar/@Hash" />
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+
+    private string Hash;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Hash = await Http.Client.GetStringAsync($"api/Gravatar/{Name}");
+    }
+}
