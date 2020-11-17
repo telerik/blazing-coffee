@@ -4,8 +4,8 @@ This is a demo showing how a full-stack .NET application can be built with ASP.N
 
 ## Requirements
 
-- .NET Core 3.2 or higher
-- Telerik UI for Blazor (Trial or Commercial)
+- .NET Core 5.0 or higher
+- Telerik UI for Blazor (Commercial, or Trial per instructions below)
 - npm (node package manager, for sass themes)
 
 ## Running the Application
@@ -18,30 +18,38 @@ This is a demo showing how a full-stack .NET application can be built with ASP.N
 
 If you are using a trial version of Telerik UI for Blazor.
 
+`<LATEST VERSION>` represents the literal latest version available, ex: "2.19.0".
+
 - In BlazingCoffee.Client add `.Trial` to the package path.
 
 ```
-    <PackageReference Include="Telerik.UI.for.Blazor.Trial" Version="2.x" />
+    <PackageReference Include="Telerik.UI.for.Blazor.Trial" Version="<LATEST VERSION>" />
 ```
 
 - In BlazingCoffee.Client/wwwroot, append `.trial` to `telerik.ui.for.blazor` in the script path.
 
+Before:
+
 ```
     <script src="_content/telerik.ui.for.blazor/js/telerik-blazor.js"></script>
 ```
+After:
 
+```
+    <script src="_content/telerik.ui.for.blazor.trial/js/telerik-blazor.js"></script>
+```
 - In BlazingCoffee.Server, add .Trial to all Telerik.* package paths.
 
 ```
-    <PackageReference Include="Telerik.Documents.Core.Trial" Version="2020.x" />
-    <PackageReference Include="Telerik.Documents.Fixed.Trial" Version="2020.x" />
-    <PackageReference Include="Telerik.Documents.Flow.Trial" Version="2020.x" />
-    <PackageReference Include="Telerik.Documents.Flow.FormatProviders.Pdf.Trial" Version="2020.x" />
-    <PackageReference Include="Telerik.Documents.Spreadsheet.Trial" Version="2020.x" />
-    <PackageReference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Trial" Version="2020.x" />
-    <PackageReference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf.Trial" Version="2020.x" />
-    <PackageReference Include="Telerik.Documents.SpreadsheetStreaming.Trial" Version="2020.x" />
-    <PackageReference Include="Telerik.Zip.Trial" Version="2020.x" />
+    <PackageReference Include="Telerik.Documents.Core.Trial" Version="<LATEST VERSION>" />
+    <PackageReference Include="Telerik.Documents.Fixed.Trial" Version="<LATEST VERSION>" />
+    <PackageReference Include="Telerik.Documents.Flow.Trial" Version="<LATEST VERSION>" />
+    <PackageReference Include="Telerik.Documents.Flow.FormatProviders.Pdf.Trial" Version="<LATEST VERSION>" />
+    <PackageReference Include="Telerik.Documents.Spreadsheet.Trial" Version="<LATEST VERSION>" />
+    <PackageReference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Trial" Version="<LATEST VERSION>" />
+    <PackageReference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf.Trial" Version="<LATEST VERSION>" />
+    <PackageReference Include="Telerik.Documents.SpreadsheetStreaming.Trial" Version="<LATEST VERSION>" />
+    <PackageReference Include="Telerik.Zip.Trial" Version="<LATEST VERSION>" />
 ```
 
 # Demo Features
@@ -76,7 +84,6 @@ If you are using a trial version of Telerik UI for Blazor.
     - Icon
     - Window
     - Tool Tip
-    - Card*
     - Rating*
     - DrawerNavLink*
 
