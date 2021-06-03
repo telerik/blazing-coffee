@@ -1,5 +1,11 @@
 # Blazing Coffee Roasters
 
+> This repository is now obsolete. For the current app source code, please visit:
+> 
+> https://github.com/telerik/blazor-ui/tree/master/sample-applications/blazing-coffee
+
+-----
+
 This is a demo showing how a full-stack .NET application can be built with ASP.NET Core, Blazor Wasm, and Telerik UI for Blazor.
 
 ## Requirements
